@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSeasonsTable extends Migration
+class Projects extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,24 @@ class CreateSeasonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('seasons', function (Blueprint $table) {
+        //
+
+        Schema::create('projects', function (Blueprint $table) {
             $table->engine="InnoDB";
             $table->bigIncrements('id');
-            $table->string('NameSeason');
-            $table->date('startDate');
-            $table->date('endDate');
-            $table->string('noteSeason');
+            $table->String('nameProject');
+            $table->Date('startDateProject');
+            $table->Date('endDateProject');
+            $table->Date('published');
+
+
+            $table->bigInteger('seasons_id')->unsigned();
+
             $table->timestamps();
+
+            $table->foreign('seasons_id')->references('id')->on('seasons')->onDelete("cascade");
         });
+        
     }
 
     /**
@@ -31,6 +40,6 @@ class CreateSeasonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seasons');
+        //
     }
 }

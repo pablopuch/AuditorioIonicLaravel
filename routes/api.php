@@ -22,3 +22,7 @@ Route::get('/seasons','App\Http\Controllers\SeasonsController@index');
 Route::post('/seasons','App\Http\Controllers\SeasonsController@store');
 Route::put('/seasons/{id}','App\Http\Controllers\SeasonsController@update');
 Route::delete('/seasons/{id}','App\Http\Controllers\SeasonsController@destroy');
+Route::get('/projects','App\Http\Controllers\ProjectsController@index');
+Route::post('/projects','App\Http\Controllers\ProjectsController@store');
+Route::put('/projects/{id}','App\Http\Controllers\ProjectsController@update');
+Route::delete('/projects/{id}','App\Http\Controllers\ProjectsController@destroy');
