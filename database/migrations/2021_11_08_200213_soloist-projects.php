@@ -22,10 +22,8 @@ class SoloistProjects extends Migration
             $table->timestamps();
 
             $table->foreign('project_id')->references('id')->on('projects')->onDelete("cascade");
-            $table->bigInteger('project_id')->unsigned();
-
             $table->foreign('director_id')->references('id')->on('directors')->onDelete("cascade");
-            $table->bigInteger('director_id')->unsigned();
+          
         });
     }
 

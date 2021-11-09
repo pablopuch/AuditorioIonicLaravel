@@ -21,7 +21,7 @@ class Projects extends Migration
             $table->String('nameProject');
             $table->Date('startDateProject');
             $table->Date('endDateProject');
-            $table->Date('published');
+            $table->boolean('published');
 
 
             $table->bigInteger('seasons_id')->unsigned();

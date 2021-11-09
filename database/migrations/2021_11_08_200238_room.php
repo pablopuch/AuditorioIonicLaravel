@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TypeSchedule extends Migration
+class Room extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,20 @@ class TypeSchedule extends Migration
      */
     public function up()
     {
-        //
+        
+        Schema::create('room', function (Blueprint $table) {
+            $table->engine="InnoDB";
+            $table->bigIncrements('id');
+            
+            $table->String('nameRoom');
+            $table->bigInteger('acronymRoom');
+            $table->timestamps();
+
+    
+        });
+
+        
+    
     }
 
     /**
