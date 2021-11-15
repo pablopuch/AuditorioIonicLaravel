@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Playlists;
+use App\Models\SoloistProjects;
 
-class PlaylistsController extends Controller
+class SoloistProjectsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PlaylistsController extends Controller
      */
     public function index()
     {
-        $playlist = Playlists::all();
-        return $playlist;
+        $soloistProject = SoloistProjects::all();
+        return $soloistProject;
     }
 
     /**
@@ -36,13 +36,14 @@ class PlaylistsController extends Controller
      */
     public function store(Request $request)
     {
-        $playlist = new Playlists();
-        $playlist-> nameplaylist = $request->  nameplaylist;
-        $playlist->startDateplaylist= $request->startDate;
-        $playlist->endDateplaylist=$request->endDate;
-        $playlist->published=$request->published;
-        
-        $playlist->save();
+        $soloistProject = new SoloistProjects();
+        $soloistProject-> namesoloistProject = $request->  namesoloistProject;
+        $soloistProject->startDatesoloistProject= $request->startDatesoloistProject;
+        $soloistProject->endDatesoloistProject=$request->endDatesoloistProject;
+        $soloistProject->published=$request->published;
+        $soloistProject->seasons_id=$request->seasons_id;
+
+        $soloistProject->save();
     }
 
     /**
@@ -76,15 +77,16 @@ class PlaylistsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $playlist = Playlists::findOrFail($request->id);
-        $playlist-> nameplaylist = $request->  nameplaylist;
-        $playlist->startDateplaylist= $request->startDate;
-        $playlist->endDateplaylist=$request->endDate;
-        $playlist->published=$request->published;
+        $soloistProject = SoloistProjects::findOrFail($request->id);
+        $soloistProject-> namesoloistProject = $request->  namesoloistProject;
+        $soloistProject->startDatesoloistProject= $request->startDatesoloistProject;
+        $soloistProject->endDatesoloistProject=$request->endDatesoloistProject;
+        $soloistProject->published=$request->published;
+        $soloistProject->seasons_id=$request->seasons_id;
         
-        $playlist->save();
+        $soloistProject->save();
 
-        return $playlist;
+        return $soloistProject;
     }
 
     /**
@@ -97,8 +99,8 @@ class PlaylistsController extends Controller
     {
         
       
-        $playlist = playlists::destroy($request->id);
+        $soloistProject = SoloistProjects::destroy($request->id);
 
-        return $playlist;
+        return $soloistProject;
     }
 }

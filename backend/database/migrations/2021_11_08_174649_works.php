@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Playlists extends Migration
+class Works extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class Playlists extends Migration
      */
     public function up()
     {
-        Schema::create('playlists', function (Blueprint $table) {
+        Schema::create('works', function (Blueprint $table) {
             $table->engine="InnoDB";
             $table->bigIncrements('id');
-            $table->String('stringProject');
-            $table->String('order')->nullable();
+            $table->String('nameWork');
+            $table->Time('duration');
+            $table->String('notes')->nullable();
+            $table->String('orchestrationWork');
+            $table->String('stringWork');
 
 
             $table->bigInteger('composer_id')->unsigned();
@@ -26,6 +29,7 @@ class Playlists extends Migration
 
             $table->foreign('composer_id')->references('id')->on('composers')->onDelete("cascade");
         });
+        
     }
 
     /**

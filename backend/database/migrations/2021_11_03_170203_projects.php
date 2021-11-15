@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Works extends Migration
+class Projects extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,23 @@ class Works extends Migration
      */
     public function up()
     {
-        Schema::create('works', function (Blueprint $table) {
+        //
+
+        Schema::create('projects', function (Blueprint $table) {
             $table->engine="InnoDB";
             $table->bigIncrements('id');
-            $table->String('nameWork');
-            $table->String('notes')->nullable();
+            $table->String('nameProject');
+            $table->Date('startDateProject');
+            $table->Date('endDateProject');
+            $table->boolean('published');
+            $table->String('orchestrationProject');
 
 
-            $table->bigInteger('composer_id')->unsigned();
+            $table->bigInteger('seasons_id')->unsigned();
 
             $table->timestamps();
 
-            $table->foreign('composer_id')->references('id')->on('composers')->onDelete("cascade");
+            $table->foreign('seasons_id')->references('id')->on('seasons')->onDelete("cascade");
         });
         
     }

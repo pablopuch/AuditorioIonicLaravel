@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Schedules;
 
-class DirectordirectorsController extends Controller
+class ScheduleController extends Controller
 {
     
         /**
@@ -14,8 +15,8 @@ class DirectordirectorsController extends Controller
          */
         public function index()
         {
-            $director = Directors::all();
-            return $director;
+            $schedule = Schedules::all();
+            return $schedule;
         }
     
         /**
@@ -36,14 +37,14 @@ class DirectordirectorsController extends Controller
          */
         public function store(Request $request)
         {
-            $director = new Directors();
-            $director-> namedirector = $request->  namedirector;
-            $director->startDatedirector= $request->startDatedirector;
-            $director->endDatedirector=$request->endDatedirector;
-            $director->published=$request->published;
-            $director->seasons_id=$request->seasons_id;
+            $schedule = new Schedules();
+            $schedule-> nameschedule = $request->  nameschedule;
+            $schedule->startDateschedule= $request->startDateschedule;
+            $schedule->endDateschedule=$request->endDateschedule;
+            $schedule->published=$request->published;
+            $schedule->seasons_id=$request->seasons_id;
     
-            $director->save();
+            $schedule->save();
         }
     
         /**
@@ -77,16 +78,16 @@ class DirectordirectorsController extends Controller
          */
         public function update(Request $request, $id)
         {
-            $director = Directors::findOrFail($request->id);
-            $director-> namedirector = $request->  namedirector;
-            $director->startDatedirector= $request->startDatedirector;
-            $director->endDatedirector=$request->endDatedirector;
-            $director->published=$request->published;
-            $director->seasons_id=$request->seasons_id;
+            $schedule = Schedules::findOrFail($request->id);
+            $schedule-> nameschedule = $request->  nameschedule;
+            $schedule->startDateschedule= $request->startDateschedule;
+            $schedule->endDateschedule=$request->endDateschedule;
+            $schedule->published=$request->published;
+            $schedule->seasons_id=$request->seasons_id;
             
-            $director->save();
+            $schedule->save();
     
-            return $director;
+            return $schedule;
         }
     
         /**
@@ -99,8 +100,8 @@ class DirectordirectorsController extends Controller
         {
             
           
-            $director = Directors::destroy($request->id);
+            $schedule = Schedules::destroy($request->id);
     
-            return $director;
+            return $schedule;
         }
 }

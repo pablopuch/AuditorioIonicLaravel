@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Projects;
+use App\Models\TypeSchedules;
 
-class projectsController extends Controller
+class TypeSchedulesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class projectsController extends Controller
      */
     public function index()
     {
-        $project = Projects::all();
-        return $project;
+        $typeSchedule = TypeSchedules::all();
+        return $typeSchedule;
     }
 
     /**
@@ -36,14 +36,14 @@ class projectsController extends Controller
      */
     public function store(Request $request)
     {
-        $project = new projects();
-        $project-> nameproject = $request->  nameproject;
-        $project->startDateProject= $request->startDateProject;
-        $project->endDateProject=$request->endDateProject;
-        $project->published=$request->published;
-        $project->seasons_id=$request->seasons_id;
+        $typeSchedule = new TypeSchedules();
+        $typeSchedule-> nametypeSchedule = $request->  nametypeSchedule;
+        $typeSchedule->startDatetypeSchedule= $request->startDatetypeSchedule;
+        $typeSchedule->endDatetypeSchedule=$request->endDatetypeSchedule;
+        $typeSchedule->published=$request->published;
+        $typeSchedule->seasons_id=$request->seasons_id;
 
-        $project->save();
+        $typeSchedule->save();
     }
 
     /**
@@ -77,16 +77,16 @@ class projectsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $project = projects::findOrFail($request->id);
-        $project-> nameProject = $request->  nameProject;
-        $project->startDateProject= $request->startDateProject;
-        $project->endDateProject=$request->endDateProject;
-        $project->published=$request->published;
-        $project->seasons_id=$request->seasons_id;
+        $typeSchedule = TypeSchedules::findOrFail($request->id);
+        $typeSchedule-> nametypeSchedule = $request->  nametypeSchedule;
+        $typeSchedule->startDatetypeSchedule= $request->startDatetypeSchedule;
+        $typeSchedule->endDatetypeSchedule=$request->endDatetypeSchedule;
+        $typeSchedule->published=$request->published;
+        $typeSchedule->seasons_id=$request->seasons_id;
         
-        $project->save();
+        $typeSchedule->save();
 
-        return $project;
+        return $typeSchedule;
     }
 
     /**
@@ -99,8 +99,8 @@ class projectsController extends Controller
     {
         
       
-        $project = Projects::destroy($request->id);
+        $typeSchedule = TypeSchedules::destroy($request->id);
 
-        return $project;
+        return $typeSchedule;
     }
 }

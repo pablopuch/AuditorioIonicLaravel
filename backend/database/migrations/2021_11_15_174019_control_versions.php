@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Room extends Migration
+class ControlVersions extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,19 @@ class Room extends Migration
      */
     public function up()
     {
-        
-        Schema::create('room', function (Blueprint $table) {
+        Schema::create('control_versions', function (Blueprint $table) {
             $table->engine="InnoDB";
             $table->bigIncrements('id');
             
-            $table->String('nameRoom');
-            $table->bigInteger('acronymRoom');
-            $table->timestamps();
-
-    
+            $table->bigInteger('project_id')->unsigned();
+            $table->Date('startDate');
+            $table->Date('upgradeDate')->nullable();
+            
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete("cascade");
+            
         });
 
-        
-    
     }
-
     /**
      * Reverse the migrations.
      *
