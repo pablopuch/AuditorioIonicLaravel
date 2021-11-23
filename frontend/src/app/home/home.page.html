@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Super bikes
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,17 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <h1 id="super-bike-title">Hello Super bike fan!!!</h1>
+       
+    <div *ngFor="let s of bikes">
+      <p>{{s.id}}, {{s.date}}<ion-button color="primary" (click)="deleteBicycle(b.id)">Delete</ion-button></p>
+    </div>
+
+    <p *ngIf="myBike">La bicicleta 3 es del modelo: {{myBike.model}}</p>
+
+    <ion-button color="primary" (click)="goToOtherPage()">Go to other page</ion-button>
+    <ion-button color="secondary" (click)="addAnotherBicycle()">Add another bicycle</ion-button>
+    <ion-button color="secondary" (click)="addAnotherBicycleUsingJSON()">Add another bicycle Using JSON</ion-button>
   </div>
+  <p>hola</p>
 </ion-content>

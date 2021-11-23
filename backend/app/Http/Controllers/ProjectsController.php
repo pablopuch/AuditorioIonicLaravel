@@ -42,7 +42,7 @@ class ProjectsController extends Controller
         $project->endDateProject=$request->endDateProject;
         $project->published=$request->published;
         $project->seasons_id=$request->seasons_id;
-
+        $project->orchestrationProject=$request->orchestrationProject;
         $project->save();
     }
 

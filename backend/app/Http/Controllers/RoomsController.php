@@ -38,11 +38,8 @@ class RoomsController extends Controller
         public function store(Request $request)
         {
             $room = new Rooms();
-            $room-> nameroom = $request->  nameroom;
-            $room->startDateroom= $request->startDateroom;
-            $room->endDateroom=$request->endDateroom;
-            $room->published=$request->published;
-            $room->seasons_id=$request->seasons_id;
+            $room-> nameRoom = $request->  nameRoom;
+            $room-> acronymRoom = $request->  acronymRoom;
     
             $room->save();
         }
@@ -79,11 +76,8 @@ class RoomsController extends Controller
         public function update(Request $request, $id)
         {
             $room = Rooms::findOrFail($request->id);
-            $room-> nameroom = $request->  nameroom;
-            $room->startDateroom= $request->startDateroom;
-            $room->endDateroom=$request->endDateroom;
-            $room->published=$request->published;
-            $room->seasons_id=$request->seasons_id;
+            $room-> nameRoom = $request->  nameRoom;
+            $room-> acronymRoom = $request->  acronymRoom;
             
             $room->save();
     

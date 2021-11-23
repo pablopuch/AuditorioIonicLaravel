@@ -37,11 +37,9 @@ class TypeSchedulesController extends Controller
     public function store(Request $request)
     {
         $typeSchedule = new TypeSchedules();
-        $typeSchedule-> nametypeSchedule = $request->  nametypeSchedule;
-        $typeSchedule->startDatetypeSchedule= $request->startDatetypeSchedule;
-        $typeSchedule->endDatetypeSchedule=$request->endDatetypeSchedule;
-        $typeSchedule->published=$request->published;
-        $typeSchedule->seasons_id=$request->seasons_id;
+        $typeSchedule-> nameType = $request->  nameType;
+        $typeSchedule->hourRangeType= $request->hourRangeType;
+        
 
         $typeSchedule->save();
     }
@@ -78,11 +76,9 @@ class TypeSchedulesController extends Controller
     public function update(Request $request, $id)
     {
         $typeSchedule = TypeSchedules::findOrFail($request->id);
-        $typeSchedule-> nametypeSchedule = $request->  nametypeSchedule;
-        $typeSchedule->startDatetypeSchedule= $request->startDatetypeSchedule;
-        $typeSchedule->endDatetypeSchedule=$request->endDatetypeSchedule;
-        $typeSchedule->published=$request->published;
-        $typeSchedule->seasons_id=$request->seasons_id;
+        $typeSchedule = new TypeSchedules();
+        $typeSchedule-> nameType = $request->  nameType;
+        $typeSchedule->hourRangeType= $request->hourRangeType;
         
         $typeSchedule->save();
 
