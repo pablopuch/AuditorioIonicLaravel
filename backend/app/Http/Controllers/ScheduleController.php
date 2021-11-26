@@ -15,7 +15,7 @@ class ScheduleController extends Controller
          */
         public function index()
         {
-            $schedule = Schedules::all();
+            $schedule = Schedules::with('rooms', 'projects', 'typeshedules')->get();
             return $schedule;
         }
     
@@ -100,7 +100,6 @@ class ScheduleController extends Controller
         public function destroy(Request $request)
         {
             
-          
             $schedule = Schedules::destroy($request->id);
     
             return $schedule;

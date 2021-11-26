@@ -16,6 +16,11 @@ export class HomePage {
      this.router.navigate(['calendar']);
 
    }
+
+   testsGo() {
+    this.router.navigate(['tests']);
+
+  }
  
 
 }
