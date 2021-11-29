@@ -12,25 +12,25 @@ class Schedules extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function project()
+    public function projects()
     {
-        return $this->hasOne('App\Models\Project', 'id', 'project_id');
+        return $this->hasOne('App\Models\Projects', 'id', 'project_id');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function room()
+    public function rooms()
     {
-        return $this->hasOne('App\Models\Room', 'id', 'room_id');
+        return $this->hasOne('App\Models\Rooms', 'id', 'rooms_id');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function typeShedule()
+    public function typeShedules()
     {
-        return $this->hasOne('App\Models\TypeShedule', 'id', 'type_id');
+        return $this->hasOne('App\Models\TypeSchedules', 'id', 'type_schedules_id');
     }
     
 

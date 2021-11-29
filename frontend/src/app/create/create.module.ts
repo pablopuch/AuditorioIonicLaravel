@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CalendarPageRoutingModule } from './calendar-routing.module';
+import { CreatePageRoutingModule } from './create-routing.module';
 
-import { CalendarPage } from './calendar.page';
+import { CreatePage } from './create.page';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -16,9 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     IonicModule,
-    CalendarPageRoutingModule,
+    CreatePageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [CalendarPage]
+  declarations: [CreatePage]
 })
-export class CalendarPageModule {}
+export class CreatePageModule {}
