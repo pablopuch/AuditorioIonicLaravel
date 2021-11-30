@@ -27,12 +27,9 @@ export class UpdatePage implements OnInit {
     private router: Router
   ) {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(this.id);
   }
 
   ngOnInit() {
-    console.log(this.id);
-    
     this.fetchSchedule(this.id);
     this.checkoutForm = this.formBuilder.group({
       project_id: [''],
@@ -45,16 +42,15 @@ export class UpdatePage implements OnInit {
   }
 
   fetchSchedule(id) {
-    console.log(id);
     this.scheduleCrudService.getScheduleById(id).subscribe((data) => {
-      console.log(this.scheduleCrudService.getScheduleById(id));
+      console.log(data);
       this.checkoutForm.setValue({
-        project_id: data['project_id'],
-        type_schedules_id: data['type_schedules_id'],
-        room_id: data['room_id'],
-        date: data['date'],
-        hourRange: data['hourRange'],
-        note: data['note']
+        project_id: data[0]["project_id"],
+        type_schedules_id: data[0]['type_schedules_id'],
+        room_id: data[0]['rooms_id'],
+        date: data[0]['date'],
+        hourRange: data[0]['hourRange'],
+        note: data[0]['note']
       });
     });
   }
@@ -79,20 +75,18 @@ export class UpdatePage implements OnInit {
     if (!this.checkoutForm.valid) {
     return false;
   } else{
-    const schedule: Schedule = {
-      id: this.checkoutForm.get('project_id').value, project_id: this.checkoutForm.get('project_id').value,
-      type_schedules_id: this.checkoutForm.get('type_schedules_id').value,
-      date: this.checkoutForm.get('date').value, hourRange: this.checkoutForm.get('hourRange').value, note: this.checkoutForm.get('note').value,
-      rooms_id: this.checkoutForm.get('room_id').value
+    
+    this.scheduleCrudService.updateSchedule(this.id, this.checkoutForm.value).subscribe(() => {
+this.checkoutForm.reset();
+    });
+   this.router.navigate(['/calendar']);
     }
 
-    this.scheduleCrudService.updateSchedule(this.id, schedule).subscribe(() => {
+    
 
-    });
-
-    this.calendarGo();
+   
   }
-  }
+  
 
 
 }
