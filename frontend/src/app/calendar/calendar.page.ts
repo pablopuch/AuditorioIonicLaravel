@@ -70,4 +70,8 @@ export class CalendarPage implements OnInit {
     this.router.navigate(['create']);
   }
 
+  goUpdate(){
+    this.router.navigate(['update']);
+  }
+
 }

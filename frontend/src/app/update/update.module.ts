@@ -8,11 +8,15 @@ import { UpdatePageRoutingModule } from './update-routing.module';
 
 import { UpdatePage } from './update.page';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
     UpdatePageRoutingModule
   ],
   declarations: [UpdatePage]
