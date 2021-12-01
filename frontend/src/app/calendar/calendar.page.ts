@@ -15,7 +15,7 @@ import { SchedulesService } from '../services/schedule.service';
 export class CalendarPage implements OnInit {
 
   public scheduleArray: Array<Schedule> = [];
-  public myBike: Schedule;
+  public schedule: Schedule;
 
  
 
@@ -24,6 +24,7 @@ export class CalendarPage implements OnInit {
   
   ngOnInit(): void {
     this.loadInfo();
+    console.log("hola");
   }
 
   loadInfo(){

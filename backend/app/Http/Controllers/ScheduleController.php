@@ -43,7 +43,7 @@ class ScheduleController extends Controller
             $schedule->type_schedules_id=$request->type_schedules_id;
             $schedule->hourRange=$request->hourRange;
             $schedule->note=$request->note;
-            $schedule->rooms_id=$request->room_id;
+            $schedule->rooms_id=$request->rooms_id;
 
             $schedule->save();
         }
@@ -81,11 +81,12 @@ class ScheduleController extends Controller
         public function update(Request $request, $id)
         {
             $schedule = Schedules::findOrFail($request->id);
-            $schedule-> nameschedule = $request->  nameschedule;
-            $schedule->startDateschedule= $request->startDateschedule;
-            $schedule->endDateschedule=$request->endDateschedule;
-            $schedule->published=$request->published;
-            $schedule->seasons_id=$request->seasons_id;
+            $schedule-> project_id = $request->  project_id;
+            $schedule->date= $request->date;
+            $schedule->type_schedules_id=$request->type_schedules_id;
+            $schedule->hourRange=$request->hourRange;
+            $schedule->note=$request->note;
+            $schedule->rooms_id=$request->rooms_id;
             
             $schedule->save();
     

@@ -15,7 +15,7 @@ export class CreatePage implements OnInit {
   checkoutForm = this.formBuilder.group({
     project_id: '',
     type_schedules_id: '',
-    room_id: '',
+    rooms_id: '',
     date: '',
     hourRange: '',
     note: ''
@@ -36,14 +36,15 @@ export class CreatePage implements OnInit {
       id: this.checkoutForm.get('project_id').value, project_id: this.checkoutForm.get('project_id').value,
       type_schedules_id: this.checkoutForm.get('type_schedules_id').value,
       date: this.checkoutForm.get('date').value, hourRange: this.checkoutForm.get('hourRange').value, note: this.checkoutForm.get('note').value,
-      rooms_id: this.checkoutForm.get('room_id').value
+      rooms_id: this.checkoutForm.get('rooms_id').value
     }
 
     this.scheduleService.createSchedule(schedule).subscribe(() => {
 
     });
 
-    this.calendarGo();
+    
+    this.router.navigate(['/calendar']);
 
   }
 

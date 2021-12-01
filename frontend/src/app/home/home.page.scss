@@ -1,27 +1,55 @@
-#container {
-  text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap');
+
+
+
+ion-header{
+  height: 65px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+// ion-toolbar{
+//   height: 65px;
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+// // }
 
-  color: #8c8c8c;
+// #home{
+// // margin-top: 20px;
+// font-size: 1em;
+// margin-top: 50%;
+// }
 
-  margin: 0;
-}
+// .hcs {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// }
 
-#container a {
-  text-decoration: none;
-}
+#home-icon{
+  display: inline-block;
+  font-size: 45px;
+  color: #ffC977;
+  vertical-align: middle;
+  margin-right:5px;
+ }
+
+ #square {
+ 
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+ }
+
+
+
+
+#home-text{
+  font-size: 30px;
+   display: inline-block;
+   vertical-align: middle;
+   font-family: 'Outfit', sans-serif;
+   margin-left: 5px;
+ }
+
+ 

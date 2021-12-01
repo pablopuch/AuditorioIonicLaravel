@@ -41,7 +41,7 @@ export class SchedulesService {
     let bodyEncoded = new URLSearchParams();
     bodyEncoded.append("project_id", schedule.project_id.toString());
     bodyEncoded.append("type_schedules_id", schedule.type_schedules_id.toString());
-    bodyEncoded.append("room_id", schedule.rooms_id.toString());
+    bodyEncoded.append("rooms_id", schedule.rooms_id.toString());
     bodyEncoded.append("date", schedule.date.toString());
     bodyEncoded.append("hourRange", schedule.hourRange.toString());
     bodyEncoded.append("note", schedule.note.toString());
@@ -60,28 +60,22 @@ export class SchedulesService {
     bodyEncoded.append("project_id", schedule.project_id.toString());
   
     bodyEncoded.append("type_schedules_id", schedule.type_schedules_id.toString());
-    console.log("hola hola1")
-    bodyEncoded.append("room_id", schedule.rooms_id.toString());
-    console.log("hola hola2")
+    bodyEncoded.append("rooms_id", schedule.rooms_id.toString());
     bodyEncoded.append("date", schedule.date.toString());
     bodyEncoded.append("hourRange", schedule.hourRange.toString());
   
     bodyEncoded.append("note", schedule.note.toString());
 
     const body = bodyEncoded.toString();
-    console.log("hola hola")
 
-    console.log("createSchedule")
-    console.log(JSON.stringify(schedule))
+
+
     return this.httpClient.put<Schedule>(this.endpoint + "/" + id, body, httpOptionsUsingUrlEncoded).pipe(
       tap(_=> console.log(`Shedule update : ${id}`)),
       catchError(this.handleError<Schedule[]>("Update schdule"))
     );;
   }
 
-  // createScheduleUsingJSON(schedule: Schedule): Observable<Schedule>{
-  //   return this.httpClient.post<Schedule>(this.endpoint, JSON.stringify(schedule), httpOptions);
-  // }
 
   deleteSchedule(idSchedule: number): Observable<Schedule>{
     return this.httpClient.delete<Schedule>(this.endpoint + "/" + idSchedule);

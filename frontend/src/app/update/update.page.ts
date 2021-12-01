@@ -13,7 +13,7 @@ import { Schedule } from '../models/schedule';
 })
 
 export class UpdatePage implements OnInit {
-
+  public scheduleArray: Array<Schedule> = [];
   id: any;
 
   checkoutForm: FormGroup;
@@ -34,7 +34,7 @@ export class UpdatePage implements OnInit {
     this.checkoutForm = this.formBuilder.group({
       project_id: [''],
       type_schedules_id: [''],
-      room_id: [''],
+      rooms_id: [''],
       date: [''],
       hourRange: [''],
       note: ['']
@@ -47,13 +47,21 @@ export class UpdatePage implements OnInit {
       this.checkoutForm.setValue({
         project_id: data[0]["project_id"],
         type_schedules_id: data[0]['type_schedules_id'],
-        room_id: data[0]['rooms_id'],
+        rooms_id: data[0]['rooms_id'],
         date: data[0]['date'],
         hourRange: data[0]['hourRange'],
         note: data[0]['note']
       });
     });
   }
+
+  loadInfo(){
+    this.scheduleCrudService.getSchedules().subscribe((s: Array<Schedule>) => {
+      this.scheduleArray = s;
+    })
+  }
+
+  
 
   // onSubmit() {
   //   if (!this.checkoutForm.valid) {
@@ -79,7 +87,12 @@ export class UpdatePage implements OnInit {
     this.scheduleCrudService.updateSchedule(this.id, this.checkoutForm.value).subscribe(() => {
 this.checkoutForm.reset();
     });
-   this.router.navigate(['/calendar']);
+    
+   this.router.navigate(['/calendar']).then(()=>{
+    this.loadInfo();
+    console.log("aqui");
+  });;
+
     }
 
     

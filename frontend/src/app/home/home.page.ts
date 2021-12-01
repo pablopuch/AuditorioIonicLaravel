@@ -4,6 +4,7 @@ import { CalendarPage } from '../calendar/calendar.page';
 import { Schedule } from '../models/schedule';
 import { SchedulesService } from '../services/schedule.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
