@@ -13,7 +13,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'calendar',
+    path: 'calendar/:id',
     loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
   },
   {
@@ -28,6 +28,26 @@ const routes: Routes = [
   {
     path: 'update/:id',
     loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
+  },
+  {
+    path: 'projects',
+    loadChildren: () => import('./projects/projects.module').then( m => m.ProjectsPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'members',
+    loadChildren: () => import('./members/members.module').then( m => m.MembersPageModule)
+  },
+  {
+    path: 'orchestation',
+    loadChildren: () => import('./orchestation/orchestation.module').then( m => m.OrchestationPageModule)
+  },
+  {
+    path: 'works',
+    loadChildren: () => import('./works/works.module').then( m => m.WorksPageModule)
   },
 
 ];

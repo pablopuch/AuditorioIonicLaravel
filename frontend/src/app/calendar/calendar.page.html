@@ -1,22 +1,30 @@
-<ion-header [translucent]="true">
+<ion-header>
+
   <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
+
+    <ion-header>
+      
+          <!-- <ion-menu-button menu="custom"></ion-menu-button> -->
+  
+
+      <ion-title class="text-center">
+
+        <ion-menu-button menu="custom" id="home-menu-container"><ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon></ion-menu-button>
+        <span id="home-text">Inicio</span>
+
+      </ion-title>
+
+    </ion-header>
+
   </ion-toolbar>
+
+
+
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-
+<ion-content has-header>
 
   <div id="container" *ngFor="let s of scheduleArray">
-    <ion-card>
+    <ion-card >
       <ion-card-header>
         <ion-card-subtitle> {{s.projects.nameProject}}</ion-card-subtitle>
         <ion-card-title>{{s.rooms.nameRoom}}</ion-card-title>
@@ -43,6 +51,29 @@
 
 
   <ion-button color="primary" (click)="goCreate()">+</ion-button>
-
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="calendar">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Calendario</ion-label>
+        <ion-badge>6</ion-badge>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="members">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label>Integrantes</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="works">
+        <ion-icon name="map"></ion-icon>
+        <ion-label>Obras</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="orchestation">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>Orquestación</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 
 </ion-content>

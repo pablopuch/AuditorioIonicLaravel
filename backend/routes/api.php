@@ -56,6 +56,7 @@ Route::post('/schedule','App\Http\Controllers\ScheduleController@store');
 Route::put('/schedule/{id}','App\Http\Controllers\ScheduleController@update');
 Route::delete('/schedule/{id}','App\Http\Controllers\ScheduleController@destroy');
 Route::get('/schedule/{id}','App\Http\Controllers\ScheduleController@show');
+Route::get('/schedule/projects/{id}','App\Http\Controllers\ScheduleController@showByProjectId');
 
 Route::get('/type-schedule','App\Http\Controllers\TypeSchedulesController@index');
 Route::post('/type-schedule','App\Http\Controllers\TypeSchedulesController@store');

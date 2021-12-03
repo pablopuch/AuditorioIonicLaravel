@@ -15,7 +15,7 @@ class ScheduleController extends Controller
          */
         public function index()
         {
-            $schedule = Schedules::with('rooms', 'projects', 'typeshedules')->get();
+            $schedule = Schedules::with('rooms', 'projects', 'typeschedules')->get();
             return $schedule;
         }
     
@@ -54,10 +54,18 @@ class ScheduleController extends Controller
          * @param  int  $id
          * @return \Illuminate\Http\Response
          */
-        public function show(Request $rq)
+        public function show(Request $request)
         {
-            $schedule = Schedules::where('id',$rq->id)->get(); 
+
+            $schedule = Schedules::where('id',$request->id)->get(); 
             return $schedule;
+        }
+
+        public function showByProjectId(Request $request)
+        {
+        $schedule = Schedules::where('project_id', '=' ,$request->id)->with('rooms', 'projects', 'typeschedules')->get();
+        return $schedule;
+
         }
     
         /**

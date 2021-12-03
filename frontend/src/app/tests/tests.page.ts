@@ -1,29 +1,27 @@
 import { Component } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
-  selector: 'slides-example',
-  template: `
-    <ion-content>
-      <ion-slides pager="true" [options]="slideOpts">
-        <ion-slide>
-          <h1>Slide 1</h1>
-        </ion-slide>
-        <ion-slide>
-          <h1>Slide 2</h1>
-        </ion-slide>
-        <ion-slide>
-          <h1>Slide 3</h1>
-        </ion-slide>
-      </ion-slides>
-    </ion-content>
-  `
+  selector: 'tests.page',
+  templateUrl: 'tests.page.html',
+  styleUrls: ['./tests.page.scss'],
 })
 export class TestsPage {
-  // Optional parameters to pass to the swiper instance.
-  // See http://idangero.us/swiper/api/ for valid options.
-  slideOpts = {
-    initialSlide: 1,
-    speed: 400
-  };
-  constructor() {}
+
+constructor(private menu: MenuController) { }
+
+  openFirst() {
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
+    console.log("a");
+  }
+
+  openEnd() {
+    this.menu.open('end');
+  }
+
+  openCustom() {
+    this.menu.enable(true, 'custom');
+    this.menu.open('custom');
+  }
 }

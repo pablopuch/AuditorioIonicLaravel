@@ -28,7 +28,7 @@ class Schedules extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function typeShedules()
+    public function typeSchedules()
     {
         return $this->hasOne('App\Models\TypeSchedules', 'id', 'type_schedules_id');
     }

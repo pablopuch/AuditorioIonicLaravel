@@ -37,6 +37,13 @@ export class SchedulesService {
       );
   }
 
+  getSchedulesByProjectId(projectId): Observable<Schedule[]>{
+    return this.httpClient.get<Schedule[]>(this.endpoint + "/projects/" + projectId).pipe(
+      tap(_=> console.log("Schedule retrieved")),
+      catchError(this.handleError<Schedule[]>("Get shedule", []))
+    );
+  }
+
   createSchedule(schedule: Schedule): Observable<Schedule>{
     let bodyEncoded = new URLSearchParams();
     bodyEncoded.append("project_id", schedule.project_id.toString());

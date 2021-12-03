@@ -26,11 +26,15 @@ ion-header{
 //   align-items: center;
 // }
 
-#home-icon{
+#home-menu-container{
   display: inline-block;
+  vertical-align: middle;
+}
+
+#home-icon{
+
   font-size: 45px;
   color: #ffC977;
-  vertical-align: middle;
   margin-right:5px;
  }
 
@@ -51,5 +55,6 @@ ion-header{
    font-family: 'Outfit', sans-serif;
    margin-left: 5px;
  }
+ 
 
  

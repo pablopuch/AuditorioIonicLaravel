@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,  ActivatedRoute } from '@angular/router';
 import { Schedule } from '../models/schedule';
 import { SchedulesService } from '../services/schedule.service';
 
@@ -16,21 +16,24 @@ export class CalendarPage implements OnInit {
 
   public scheduleArray: Array<Schedule> = [];
   public schedule: Schedule;
-
+  project_id = this.activatedRoute.snapshot.paramMap.get('id');;
+  
  
 
-  constructor(private router: Router, private scheduleService: SchedulesService, 
+  constructor(private router: Router, private scheduleService: SchedulesService, private activatedRoute: ActivatedRoute,
   ) {}
+
   
   ngOnInit(): void {
     this.loadInfo();
-    console.log("hola");
   }
 
   loadInfo(){
-    this.scheduleService.getSchedules().subscribe((s: Array<Schedule>) => {
+    this.scheduleService.getSchedulesByProjectId(this.project_id).subscribe((s: Array<Schedule>) => {
       this.scheduleArray = s;
+      console.log(this.project_id);
     })
+    
   }
 
   goToOtherPage(){
