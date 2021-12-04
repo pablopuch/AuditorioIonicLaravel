@@ -38,11 +38,8 @@ class DirectorsController extends Controller
         public function store(Request $request)
         {
             $director = new Directors();
-            $director-> namedirector = $request->  namedirector;
-            $director->startDatedirector= $request->startDatedirector;
-            $director->endDatedirector=$request->endDatedirector;
-            $director->published=$request->published;
-            $director->seasons_id=$request->seasons_id;
+            $director-> nameDirector = $request->  nameDirector;
+            $director->titleDirector= $request->titleDirector;
     
             $director->save();
         }
@@ -79,12 +76,9 @@ class DirectorsController extends Controller
         public function update(Request $request, $id)
         {
             $director = Directors::findOrFail($request->id);
-            $director-> namedirector = $request->  namedirector;
-            $director->startDatedirector= $request->startDatedirector;
-            $director->endDatedirector=$request->endDatedirector;
-            $director->published=$request->published;
-            $director->seasons_id=$request->seasons_id;
-            
+            $director-> nameDirector = $request->  nameDirector;
+            $director->titleDirector= $request->titleDirector;
+
             $director->save();
     
             return $director;

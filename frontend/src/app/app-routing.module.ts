@@ -12,10 +12,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  {
-    path: 'calendar/:id',
-    loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
-  },
+  // {
+  //   path: 'calendar/:id',
+  //   loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
+  // },
   {
     path: 'tests',
     loadChildren: () => import('./tests/tests.module').then( m => m.TestsPageModule)
@@ -38,16 +38,8 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'members',
-    loadChildren: () => import('./members/members.module').then( m => m.MembersPageModule)
-  },
-  {
-    path: 'orchestation',
-    loadChildren: () => import('./orchestation/orchestation.module').then( m => m.OrchestationPageModule)
-  },
-  {
-    path: 'works',
-    loadChildren: () => import('./works/works.module').then( m => m.WorksPageModule)
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
 
 ];

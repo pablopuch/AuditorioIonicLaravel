@@ -37,12 +37,9 @@ class SoloistProjectsController extends Controller
     public function store(Request $request)
     {
         $soloistProject = new SoloistProjects();
-        $soloistProject-> namesoloistProject = $request->  namesoloistProject;
-        $soloistProject->startDatesoloistProject= $request->startDatesoloistProject;
-        $soloistProject->endDatesoloistProject=$request->endDatesoloistProject;
-        $soloistProject->published=$request->published;
-        $soloistProject->seasons_id=$request->seasons_id;
-
+        $soloistProject-> project_id = $request-> project_id;
+        $soloistProject-> soloist_id = $request-> soloist_id;
+        
         $soloistProject->save();
     }
 
@@ -68,6 +65,12 @@ class SoloistProjectsController extends Controller
         //
     }
 
+    public function showByProjectId(Request $request)
+    {
+    $soloistProject = SoloistProjects::where('project_id', '=' ,$request->id)->with('soloists')->get();
+    return $soloistProject;
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -78,11 +81,8 @@ class SoloistProjectsController extends Controller
     public function update(Request $request, $id)
     {
         $soloistProject = SoloistProjects::findOrFail($request->id);
-        $soloistProject-> namesoloistProject = $request->  namesoloistProject;
-        $soloistProject->startDatesoloistProject= $request->startDatesoloistProject;
-        $soloistProject->endDatesoloistProject=$request->endDatesoloistProject;
-        $soloistProject->published=$request->published;
-        $soloistProject->seasons_id=$request->seasons_id;
+        $soloistProject-> project_id = $request-> project_id;
+        $soloistProject-> soloist_id = $request-> soloist_id;
         
         $soloistProject->save();
 
@@ -95,6 +95,7 @@ class SoloistProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy(Request $request)
     {
         

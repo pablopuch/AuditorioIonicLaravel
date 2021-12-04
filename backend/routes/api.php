@@ -78,7 +78,7 @@ Route::get('/soloist-projects','App\Http\Controllers\SoloistProjectsController@i
 Route::post('/soloist-projects','App\Http\Controllers\SoloistProjectsController@store');
 Route::put('/soloist-projects/{id}','App\Http\Controllers\SoloistProjectsController@update');
 Route::delete('/soloist-projects/{id}','App\Http\Controllers\SoloistProjectsController@destroy');
-
+Route::get('/soloist-projects/projects/{id}','App\Http\Controllers\SoloistProjectsController@showByProjectId');
 
 Route::get('/directors','App\Http\Controllers\DirectorsController@index');
 Route::post('/directors','App\Http\Controllers\DirectorsController@store');
@@ -89,7 +89,7 @@ Route::get('/director-projects','App\Http\Controllers\DirectorProjectsController
 Route::post('/director-projects','App\Http\Controllers\DirectorProjectsController@store');
 Route::put('/director-projects/{id}','App\Http\Controllers\DirectorProjectsController@update');
 Route::delete('/director-projects/{id}','App\Http\Controllers\DirectorProjectsController@destroy');
-
+Route::get('/director-projects/projects/{id}','App\Http\Controllers\DirectorProjectsController@showByProjectId');
 
 
 

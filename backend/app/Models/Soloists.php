@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Soloists extends Model
 {
     use HasFactory;
+
+    public function soloistProjects()
+    {
+        return $this->hasMany('App\Models\SoloistProjects');
+    }
 }

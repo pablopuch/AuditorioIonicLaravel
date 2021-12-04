@@ -38,11 +38,9 @@ class SoloistsController extends Controller
         public function store(Request $request)
         {
             $soloist = new Soloists();
-            $soloist-> namesoloist = $request->  namesoloist;
-            $soloist->startDatesoloist= $request->startDatesoloist;
-            $soloist->endDatesoloist=$request->endDatesoloist;
-            $soloist->published=$request->published;
-            $soloist->seasons_id=$request->seasons_id;
+            $soloist-> nameSoloist = $request->  nameSoloist;
+            $soloist->titleSoloist= $request->titleSoloist;
+    
     
             $soloist->save();
         }
@@ -79,11 +77,8 @@ class SoloistsController extends Controller
         public function update(Request $request, $id)
         {
             $soloist = Soloists::findOrFail($request->id);
-            $soloist-> namesoloist = $request->  namesoloist;
-            $soloist->startDatesoloist= $request->startDatesoloist;
-            $soloist->endDatesoloist=$request->endDatesoloist;
-            $soloist->published=$request->published;
-            $soloist->seasons_id=$request->seasons_id;
+            $director-> nameSoloist = $request->  nameSoloist;
+            $soloist->titlesoloist= $request->titleSoloist;
             
             $soloist->save();
     

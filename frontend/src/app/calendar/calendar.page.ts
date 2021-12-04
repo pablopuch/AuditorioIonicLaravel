@@ -41,41 +41,13 @@ export class CalendarPage implements OnInit {
   }
 
 
-  // addAnotherSchedule(){
-  //   console.log("addAnotherSchedule")
-  //   const schedule: Schedule = { id: 0, model: "peperonilla", year: 1976 };
-  //   this.scheduleService.createSchedule(schedule).subscribe(() => {
-  //     this.loadInfo();
-  //   });
-  // }
-
-  // addAnotherScheduleUsingJSON(){
-  //   console.log("addAnotherScheduleUsingJSON")
-  //   const schedule: Schedule = { id: 0, model: "peperonilla", year: 1976 };
-  //   this.scheduleService.createScheduleUsingJSON(schedule).subscribe(() => {
-  //     this.loadInfo();
-  //   });
-  // }
-
   deleteSchedule(idSchedule: number){
     this.scheduleService.deleteSchedule(idSchedule).subscribe(() => {
       this.loadInfo();
     });
   }
 
-  // addSchedule(){
-  //   const schedule: Schedule = { id: 0, model: "peperonilla", year: 1976 };
-  //   this.scheduleService.createSchedule(schedule).subscribe(() => {
-  //     this.loadInfo();
-  //   });
-  // }
 
-  goCreate(){
-    this.router.navigate(['create']);
-  }
 
-  goUpdate(idSchedule: number){
-    this.router.navigate(['update/', idSchedule]);
-  }
 
 }

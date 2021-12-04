@@ -18,11 +18,11 @@ class SoloistProjects extends Migration
             $table->bigIncrements('id');
             
             $table->bigInteger('project_id')->unsigned();
-            $table->bigInteger('director_id')->unsigned();
+            $table->bigInteger('soloist_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('project_id')->references('id')->on('projects')->onDelete("cascade");
-            $table->foreign('director_id')->references('id')->on('directors')->onDelete("cascade");
+            $table->foreign('soloist_id')->references('id')->on('soloists')->onDelete("cascade");
           
         });
     }

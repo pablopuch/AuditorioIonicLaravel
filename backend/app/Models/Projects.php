@@ -20,9 +20,24 @@ class Projects extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function shedules()
+    public function schedules()
     {
-        return $this->hasMany('App\Shedule');
+        return $this->hasMany('App\Models\Shedule');
+    }
+
+    public function directors()
+    {
+        return $this->hasMany('App\Models\Directors');
+    }
+
+    public function directorsProjects()
+    {
+        return $this->hasMany('App\Models\DirectorProjects');
+    }
+
+    public function soloistProjects()
+    {
+        return $this->hasMany('App\SoloistProjects');
     }
 
 

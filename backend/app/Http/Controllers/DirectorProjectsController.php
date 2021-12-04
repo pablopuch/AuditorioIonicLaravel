@@ -38,12 +38,9 @@ class DirectorProjectsController extends Controller
         public function store(Request $request)
         {
             $directorProject = new DirectorProjects();
-            $directorProject-> namedirectorProject = $request->  namedirectorProject;
-            $directorProject->startDatedirectorProject= $request->startDatedirectorProject;
-            $directorProject->endDatedirectorProject=$request->endDatedirectorProject;
-            $directorProject->published=$request->published;
-            $directorProject->seasons_id=$request->seasons_id;
-    
+            $directorProject-> project_id = $request-> project_id;
+            $directorProject-> director_id = $request-> director_id;
+            
             $directorProject->save();
         }
     
@@ -57,6 +54,13 @@ class DirectorProjectsController extends Controller
         {
             //
         }
+
+        public function showByProjectId(Request $request)
+        {
+        $directorProject = DirectorProjects::where('project_id', '=' ,$request->id)->with('directors')->get();
+        return $directorProject;
+        }
+    
     
         /**
          * Show the form for editing the specified resource.
@@ -79,11 +83,8 @@ class DirectorProjectsController extends Controller
         public function update(Request $request, $id)
         {
             $directorProject = DirectorProjects::findOrFail($request->id);
-            $directorProject-> namedirectorProject = $request->  namedirectorProject;
-            $directorProject->startDatedirectorProject= $request->startDatedirectorProject;
-            $directorProject->endDatedirectorProject=$request->endDatedirectorProject;
-            $directorProject->published=$request->published;
-            $directorProject->seasons_id=$request->seasons_id;
+            $directorProject-> project_id = $request-> project_id;
+            $directorProject-> director_id = $request-> director_id;
             
             $directorProject->save();
     
