@@ -37,6 +37,7 @@ export class HomePage {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
   }
+  
 }
 
 

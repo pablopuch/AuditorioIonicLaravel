@@ -37,10 +37,12 @@ class WorksController extends Controller
     public function store(Request $request)
     {
         $work = new Works();
-        $work-> namework = $request->  namework;
-        $work->startDatework= $request->startDate;
-        $work->endDatework=$request->endDate;
-        $work->published=$request->published;
+        $work-> nameWork = $request->  nameWork;
+        $work->composer_id= $request -> composer_id;
+        $work->duration=$request -> duration;
+        $work->notes=$request->notes;
+        $work->orchestrationWork=$request->orchestrationWork;
+        $work->stringWork=$request->stringWork;
         
         $work->save();
     }

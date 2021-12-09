@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { OrchestationPageRoutingModule } from './orchestation-routing.module';
+import { ConfigurationPageRoutingModule } from './configuration-routing.module';
 
-import { OrchestationPage } from './orchestation.page';
+import { ConfigurationPage } from './configuration.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OrchestationPageRoutingModule
+    ConfigurationPageRoutingModule
   ],
-  declarations: [OrchestationPage]
+  declarations: [ConfigurationPage]
 })
-export class OrchestationPageModule {}
+export class ConfigurationPageModule {}

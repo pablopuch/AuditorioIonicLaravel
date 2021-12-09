@@ -29,10 +29,11 @@ export class MembersPage implements OnInit {
   }
 
   loadInfo(){
+    
     console.log(this.project_id);
     this.directorProjectService.getDirectorProjectsByProjectId(this.project_id).subscribe((s: Array<DirectorProjects>) => {
       this.directorProjectArray = s;
-      console.log(this.project_id);
+    
     })
 
     this.soloistProjectService.getSoloistProjectsByProjectId(this.project_id).subscribe((s: Array<SoloistProjects>) => {

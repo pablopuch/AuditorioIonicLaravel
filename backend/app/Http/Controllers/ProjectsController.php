@@ -14,7 +14,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $project = Projects::all();
+        $project = Projects::with("seasons")->get();
         return $project;
     }
 

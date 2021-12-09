@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,  ActivatedRoute } from '@angular/router';
+import { Router,  ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
@@ -7,12 +7,13 @@ import { Router,  ActivatedRoute } from '@angular/router';
   styleUrls: ['./tabs.page.scss'],
 })
 export class TabsPage implements OnInit {
-id = this.activatedRoute.snapshot.paramMap;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  public id : string;
+  
+  constructor(private router: Router) { this.id = this.router.url.substr(this.router.url.length - 1); }
 
   ngOnInit() {
-    console.log(this.id);
+   
   }
 
 }

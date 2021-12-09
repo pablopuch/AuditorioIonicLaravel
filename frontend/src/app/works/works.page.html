@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>works</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content has-header>
 
-<ion-content>
+  <div id="container" *ngFor="let w of playlistArray">
+    <ion-card >
+      <ion-card-header>
+        <ion-card-subtitle> {{w.composers.nameComposer}}  {{w.composers.surnameComposer}}</ion-card-subtitle>
+        <ion-card-title>{{w.works.nameWork}}</ion-card-title>
+        <hr id="separation-title">
+
+      </ion-card-header>
+
+      <ion-card-content>
+  
+   <h1>{{w.works.stringWork}}</h1>
+ <ion-row>
+   <h1>{{w.orchestrationTotal}}</h1>
+   <h1 id="duration-text">{{w.works.duration}}</h1>
+  </ion-row>
+
+      </ion-card-content>
+    </ion-card>
+ 
+  </div>
+
+  
+
+
 
 </ion-content>

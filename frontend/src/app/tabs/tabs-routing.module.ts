@@ -14,12 +14,7 @@ const routes: Routes = [
         },
       {
         path: 'members/:id',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../members/members.module').then(m => m.MembersPageModule)
-          }
-        ]
+          loadChildren: () => import('../members/members.module').then(m => m.MembersPageModule)
       },
       // {
       //   path: 'calendar',
@@ -31,22 +26,11 @@ const routes: Routes = [
       //   ]
       // },
       {
-        path: 'works',
-        children: [
-          {
-            path: '',
+        path: 'works/:id',
+ 
             loadChildren: () => import('../works/works.module').then(m => m.WorksPageModule)
-          }
-        ]
-      },
-      {
-        path: 'orchestation',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../orchestation/orchestation.module').then(m => m.OrchestationPageModule)
-          }
-        ]
+          
+        
       },
       {
         path: '',

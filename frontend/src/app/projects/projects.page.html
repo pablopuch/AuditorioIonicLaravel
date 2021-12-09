@@ -1,38 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Proyectos</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
 
 
   <div id="container" *ngFor="let p of projectsArray">
+    <h2><b>{{p.startDateProject}} - {{p.endDateProject}}</b></h2>
+   
     <ion-card routerLink="/tabs/calendar/{{p.id}}">
       <ion-card-header>
-        <ion-card-subtitle> {{p.startDateProject}}</ion-card-subtitle>
-        <ion-card-subtitle> {{p.endDateProject}}</ion-card-subtitle>
         <ion-card-title>{{p.nameProject}}</ion-card-title>
-
+        <ion-card-subtitle> </ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content>
         <ion-card-title>{{p.orchestrationProject}}</ion-card-title>
-        <ion-card-title>{{p.seasons_id}}</ion-card-title>
+        <ion-card-subtitle> {{p.seasons.NameSeason}}</ion-card-subtitle>
+    
       </ion-card-content>
     </ion-card>
- 
+    <hr id="separation-title">
   </div>
 
-  
+  <!-- <div>{{p.seasons_id}}</div> -->
 
 
 

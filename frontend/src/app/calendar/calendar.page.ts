@@ -31,7 +31,6 @@ export class CalendarPage implements OnInit {
   loadInfo(){
     this.scheduleService.getSchedulesByProjectId(this.project_id).subscribe((s: Array<Schedule>) => {
       this.scheduleArray = s;
-      console.log(this.project_id);
     })
     
   }

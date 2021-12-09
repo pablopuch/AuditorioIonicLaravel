@@ -11,6 +11,7 @@ import { ProjectsService } from '../services/projects.service';
 export class ProjectsPage implements OnInit {
   public projectsArray: Array<Projects> = [];
   public projects: Projects;
+  counter = 0;
 
   constructor(private router: Router, private projectsService: ProjectsService) { }
 
@@ -18,17 +19,28 @@ export class ProjectsPage implements OnInit {
     this.loadInfo();
   }
 
-  
-  loadInfo(){
+
+  loadInfo() {
     this.projectsService.getProjects().subscribe((p: Array<Projects>) => {
-      this.projectsArray = p;
+      for (let project of p) {
+        if (project.published == true) {
+          this.projectsArray.push(project);
+        
+        }
+      }
     })
   }
 
-  goToOtherPage(){
+  goToOtherPage() {
     this.router.navigateByUrl("/other-page");
   }
 
+  checkIfProjectIsPublished() {
+
+
+    console.log(this.projectsArray);
+
+  }
 }
 
 
@@ -40,8 +52,9 @@ export class ProjectsPage implements OnInit {
 
 
 
- 
 
- 
-  
+
+
+
+
 

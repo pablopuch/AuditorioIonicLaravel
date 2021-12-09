@@ -3,11 +3,31 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap');
 
+ion-content {
+  --offset-bottom: auto!important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
+  border-width: 1px;
+  border-color: rgb(110, 102, 102);
+  border-style: solid;
+}
 
 ion-header{
-  height: 65px;
+  height: 30px;
+ 
+  //background-color: #FEFAFE;
 }
+
+ion-toolbar{
+  border-width: 1px;
+  border-color: rgb(110, 102, 102);
+  border-style: solid;
+}
+
 
 // ion-toolbar{
 //   height: 65px;
@@ -26,35 +46,103 @@ ion-header{
 //   align-items: center;
 // }
 
-#home-menu-container{
-  display: inline-block;
-  vertical-align: middle;
-}
 
 #home-icon{
-
-  font-size: 45px;
-  color: #ffC977;
-  margin-right:5px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 55px;
+  color: #464040;
+  margin-right:10px;
+  margin-bottom: 2px;
  }
 
- #square {
- 
-  border-width: 1px;
-  border-color: black;
-  border-style: solid;
- }
-
-
+// #music-icon{color:rgb(255, 255, 255);
+// position:absolute;
+// left: 35%;
+// margin-top: 18px;
+// font-size: 1.5em;
+// }
 
 
 #home-text{
+  display: inline-block;
+  vertical-align: middle;
   font-size: 30px;
-   display: inline-block;
-   vertical-align: middle;
+color: #464040;
    font-family: 'Outfit', sans-serif;
-   margin-left: 5px;
+   
+ }
+ 
+ 
+ #square {
+
+  margin: 15px;
+  //margin-top: 3px !important;
+
+  background-color: #FEFAFE;
+  //box-shadow:0 0 2px black;
+  
+ }
+
+
+ .perfomance-icon{
+  vertical-align: middle;
+
+  font-size: 2.5em;
+  margin-top: 20px;
+ }
+
+ .essay-icon{
+  vertical-align: middle;
+
+  font-size: 3em;
+  margin-top: 15px;
  }
  
 
+ .event-type-text{
+  vertical-align: bottom;
+  display: inline-block;
+  color: #464040;
+  font-size: 30px;
+  margin-left: 15px;
+  margin-top: 25px;
+  font-family: 'Outfit', sans-serif;
+  
+ }
+
+ .performance-card {
+  margin:0;
+  box-shadow:0 0 1px rgb(177, 2, 148);
+  border-width: 0px;
+  border-color: rgb(110, 102, 102);
+  border-style: solid;
+  max-height: 250px !important;
+  background-color: #d0bfff17;
+  border-radius: 0;
+  min-width: 250px;
  
+  
+}
+.essay-card{
+  margin:0;
+  box-shadow:0 0 1px rgb(248, 161, 0);
+  border-width: 0px;
+  border-color: rgb(110, 102, 104);
+  border-style: solid;
+  max-height: 250px !important;
+  background-color: #f8bf0438;
+  border-radius: 0;
+  min-width: 250px;
+}
+
+
+.events ion-card-title,ion-card-subtitle,ion-card-content{
+
+  font-family: 'Outfit', sans-serif;
+color: #464040;
+}
+
+#essays{
+  margin-top: 20px;
+}

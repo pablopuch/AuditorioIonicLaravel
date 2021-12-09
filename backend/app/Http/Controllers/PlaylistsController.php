@@ -38,11 +38,12 @@ class PlaylistsController extends Controller
     public function store(Request $request)
     {
         $playlist = new Playlists();
-        $playlist-> nameplaylist = $request->  nameplaylist;
-        $playlist->startDateplaylist= $request->startDate;
-        $playlist->endDateplaylist=$request->endDate;
-        $playlist->published=$request->published;
-        
+        $playlist-> stringProject = $request->  stringProject;
+        $playlist->order= $request->order;
+        $playlist->orchestrationTotal=$request->orchestrationTotal;
+        $playlist->project_id=$request->project_id;
+        $playlist->work_id=$request->work_id;
+    
         $playlist->save();
     }
 
@@ -55,6 +56,12 @@ class PlaylistsController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function showByProjectId(Request $request)
+    {
+    $playlist = Playlists::where('project_id', '=' ,$request->id)->with('works','composers')->get();
+    return $playlist;
     }
 
     /**

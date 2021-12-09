@@ -12,9 +12,9 @@ class Projects extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function season()
+    public function seasons()
     {
-        return $this->hasOne('App\Models\Season', 'id', 'season_id');
+        return $this->hasOne('App\Models\Seasons', 'id', 'seasons_id');
     }
     
     /**

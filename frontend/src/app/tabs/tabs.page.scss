@@ -1,0 +1,21 @@
+ion-content {
+ 
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  
+   
+
+  }
+
+  ion-tab-bar{
+      height:70px;
+  }
+
+  ion-tab-button{
+    border-width: 1px;
+    border-color: rgb(110, 102, 102);
+    border-style: solid;
+  }

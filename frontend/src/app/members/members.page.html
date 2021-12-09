@@ -1,55 +1,39 @@
-<ion-header>
-
-  <ion-toolbar>
-
-    <ion-header>
-      
-          <!-- <ion-menu-button menu="custom"></ion-menu-button> -->
-  
-
-      <ion-title class="text-center">
-
-        <ion-menu-button menu="custom" id="home-menu-container"><ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon></ion-menu-button>
-        <span id="home-text">Inicio</span>
-
-      </ion-title>
-
-    </ion-header>
-
-  </ion-toolbar>
-
-
-
-</ion-header>
 <ion-content has-header>
-    
+
   <div id="container" *ngFor="let directorProject of directorProjectArray">
-    <ion-card >
+    <ion-card>
       <ion-card-header>
-  
-        <ion-card-subtitle> {{directorProject.directors.titleDirector}}</ion-card-subtitle>
-        <ion-card-title>{{directorProject.directors.nameDirector}}</ion-card-title>
 
+        <ion-row>
+
+
+          <ion-icon class="perfomance-icon" src="assets/director.svg"></ion-icon>
+          <h5 class="name-text"> {{directorProject.directors.nameDirector}}</h5>
+          <h6 class="title-text"><b>{{directorProject.directors.titleDirector}}</b></h6>
+        </ion-row>
       </ion-card-header>
     </ion-card>
 
-  <div id="container" *ngFor="let soloistProject of soloistProjectArray">
-    <ion-card >
-      <ion-card-header>
-        <ion-card-subtitle> {{soloistProject.soloists.titleSoloist}}</ion-card-subtitle>
-        <ion-card-title>{{soloistProject.soloists.nameSoloist}}</ion-card-title>
+    <div id="container" *ngFor="let soloistProject of soloistProjectArray">
+      <ion-card>
+        <ion-card-header>
+          <ion-row>
+            <ion-icon class="perfomance-icon" src="assets/solist.svg"></ion-icon>
+            <h5 class="name-text">{{soloistProject.soloists.nameSoloist}}</h5>
+            <h6  class="title-text"><b>{{soloistProject.soloists.titleSoloist}}</b></h6>
 
-      </ion-card-header>
-    </ion-card>
- 
+          </ion-row>
+        </ion-card-header>
+      </ion-card>
+
+    </div>
+
+
+
   </div>
 
 
- 
-  </div>
 
 
-
-  
 
 </ion-content>

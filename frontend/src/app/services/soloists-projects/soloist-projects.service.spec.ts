@@ -14,3 +14,4 @@ describe('SoloistProjectsService', () => {
     expect(service).toBeTruthy();
   });
 });
+

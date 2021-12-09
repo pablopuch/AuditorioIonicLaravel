@@ -66,6 +66,7 @@ class ScheduleController extends Controller
         $schedule = Schedules::where('project_id', '=' ,$request->id)->with('rooms', 'projects', 'typeschedules')->get();
         return $schedule;
         }
+
     
         /**
          * Show the form for editing the specified resource.

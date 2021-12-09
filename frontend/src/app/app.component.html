@@ -2,16 +2,17 @@
   
 
 
-<ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
+<ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu" >
   <ion-header>
     <ion-toolbar color="tertiary">
-      <ion-title> <ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon> <span>CURRENT ONE</span></ion-title>
+      <ion-title> <ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon> {{current}}</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
+      <ion-item routerLink="/home" routerLinkActive="active-link"><ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon>Inicio</ion-item>
       <ion-item routerLink="/projects"><ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon>Proyectos</ion-item>
-      <ion-item><ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon>Configuración</ion-item>
+      <ion-item routerLink="/configuration"><ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon>Configuración</ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>

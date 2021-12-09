@@ -1,13 +1,13 @@
-<ion-header>
+<!-- <ion-header>
 
   <ion-toolbar>
 
     <ion-header>
-      
-          <!-- <ion-menu-button menu="custom"></ion-menu-button> -->
-  
+       -->
+<!-- <ion-menu-button menu="custom"></ion-menu-button> -->
 
-      <ion-title class="text-center">
+
+<!-- <ion-title class="text-center">
 
         <ion-menu-button menu="custom" id="home-menu-container"><ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon></ion-menu-button>
         <span id="home-text">Inicio</span>
@@ -20,37 +20,40 @@
 
 
 
-</ion-header>
+</ion-header> 
+
+poner el proyectoen el menu-->
+
+
 <ion-content has-header>
 
   <div id="container" *ngFor="let s of scheduleArray">
-    <ion-card >
+    <ion-card>
       <ion-card-header>
-        <ion-card-subtitle> {{s.projects.nameProject}}</ion-card-subtitle>
-        <ion-card-title>{{s.rooms.nameRoom}}</ion-card-title>
+        <ion-card-title>{{s.typeschedules.nameType}}</ion-card-title>
+          <hr id="separation-title">
+         
 
       </ion-card-header>
 
       <ion-card-content>
-        <ion-card-title>{{s.date}}</ion-card-title>
-        <ion-card-title>{{s.hourRange}}</ion-card-title>
-        <ion-card-title>{{s.note}}</ion-card-title>
-        <ion-button color="primary" (click)="deleteSchedule(s.id)">Delete</ion-button>
-        <ion-button color="primary"  [routerLink]="['/update/', s.id]">Update</ion-button>
+       <h1><b>>Sala:</b> {{s.rooms.nameRoom}}</h1>
+
+       <h1><b>>Fecha:</b> {{s.date}}</h1>
+
+       <h1><b>>Hora:</b> {{s.hourRange}}</h1>
+  
+        <h1><b>>Notas: </b>{{s.note}}    <ion-icon name="trash" id="delete-button"  (click)="deleteSchedule(s.id)"></ion-icon>
+          <ion-icon name="create" id="update-button" [routerLink]="['/update/', s.id]"></ion-icon></h1>
+  
+     
+  
       </ion-card-content>
     </ion-card>
- 
+
   </div>
 
-  
+   <ion-icon name="add-circle" id="create-button" routerLink="/create"></ion-icon> 
 
-
-
-    <button class="button" type="submit">Create</button>
-
-
-
-  <ion-button color="primary" (click)="goCreate()">+</ion-button>
-  
 
 </ion-content>

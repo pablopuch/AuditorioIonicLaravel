@@ -45,6 +45,7 @@ Route::get('/playlists','App\Http\Controllers\PlaylistsController@index');
 Route::post('/playlists','App\Http\Controllers\PlaylistsController@store');
 Route::put('/playlists/{id}','App\Http\Controllers\PlaylistsController@update');
 Route::delete('/playlists/{id}','App\Http\Controllers\PlaylistsController@destroy');
+Route::get('/playlists/projects/{id}','App\Http\Controllers\PlaylistsController@showByProjectId');
 
 Route::get('/control-versions','App\Http\Controllers\ControlVersionsController@index');
 Route::post('/control-versions','App\Http\Controllers\ControlVersionsController@store');

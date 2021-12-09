@@ -37,11 +37,9 @@ class ComposersController extends Controller
     public function store(Request $request)
     {
         $composer = new Composers();
-        $composer-> namecomposer = $request->  namecomposer;
-        $composer->startDatecomposer= $request->startDate;
-        $composer->endDatecomposer=$request->endDate;
-        $composer->published=$request->published;
-        
+        $composer-> nameComposer = $request->  nameComposer;
+        $composer->surnameComposer= $request->surnameComposer;
+     
         $composer->save();
     }
 

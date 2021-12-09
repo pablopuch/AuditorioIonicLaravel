@@ -1,0 +1,117 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap');
+
+ion-content {
+  --offset-bottom: auto!important;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  border-width: 1px;
+  border-color: rgb(110, 102, 102);
+  border-style: solid;
+
+}
+
+
+ion-header{
+  height: 65px;
+}
+
+// ion-toolbar{
+//   height: 65px;
+
+// // }
+
+// #home{
+// // margin-top: 20px;
+// font-size: 1em;
+// margin-top: 50%;
+// }
+
+// .hcs {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// }
+
+ion-card{
+  border-radius: 0px;
+  margin:5px;
+  box-shadow:0 0 5px #F7C2C2;
+  background-color: #FEFAFE;
+ margin-top: px;
+}
+
+
+ion-card-title,ion-card-subtitle,ion-card-content{
+  font-family: 'Outfit', sans-serif;
+  color: #464040;
+  }
+ 
+ion-card-title{
+  font-size:24px;
+  margin-left: 20px;
+}
+
+ion-card-subtitle{
+
+    margin-left: 20px;
+  }
+
+  #separation-title{
+ width: 300px;
+    background-color: #F39FA0;;
+  }
+
+
+  #delete-button{
+    float: right;
+    font-size: 1.2em;
+  
+  }
+
+  
+  #update-button{
+    font-size: 1.2em;
+  
+    float: right;
+  }
+
+  #create-button{
+    position: fixed;
+    font-size: 4em;
+    right: 30px;
+    color: #FF6B89;
+    bottom: 40px;
+  }
+
+ .title-text{
+      margin-left: 145px;
+  }
+
+  .name-text{
+    margin-bottom: 15px;
+    margin-left: 20px; 
+ 
+  }
+
+.perfomance-icon{
+  font-size: 2.5em;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+ion-card-header{
+  padding: 00px;
+}
+
+#duration-text{
+    margin-left: 250px;
+ 
+}
+
+h2{margin-left: 20px;}
