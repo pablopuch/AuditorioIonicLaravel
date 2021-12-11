@@ -1,23 +1,32 @@
 <ion-app>
-  
 
 
-<ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu" >
-  <ion-header>
-    <ion-toolbar color="tertiary">
-      <ion-title> <ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon> {{current}}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
-    <ion-list>
-      <ion-item routerLink="/home" routerLinkActive="active-link"><ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon>Inicio</ion-item>
-      <ion-item routerLink="/projects"><ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon>Proyectos</ion-item>
-      <ion-item routerLink="/configuration"><ion-icon id="home-icon" src="assets/bx-home.svg"></ion-icon>Configuración</ion-item>
-    </ion-list>
-  </ion-content>
-</ion-menu>
+  <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
+
+    <ion-content>
+      <ion-list>
+        <ion-item  class="ion-no-padding" lines="none" routerLink="/home" routerLinkActive="active-link">
+          <ion-icon id="home-icon" src="assets/home-music.svg"></ion-icon>
+          <h2>Inicio</h2>
+
+        </ion-item>
+
+        <ion-item  class="ion-no-padding" lines="none" routerLink="/projects">
+
+          <ion-icon id="projects-icon" src="assets/projects-icon.svg"></ion-icon>
+          <h2 id="projects-text">Proyectos</h2>
+        </ion-item>
+
+        <ion-item  class="ion-no-padding" id="configuration-item" lines="none" routerLink="/configuration">
+          <ion-icon id="configuration-icon" src="assets/configuration-icon.svg"></ion-icon>
+          <h2 id="configuration-text">Configuración</h2>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
 
 
-<ion-router-outlet id="main"></ion-router-outlet>
+  <ion-router-outlet id="main"></ion-router-outlet>
+
 
 </ion-app>

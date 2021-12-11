@@ -10,7 +10,7 @@ ion-content {
   &::-webkit-scrollbar {
     display: none;
   }
-  border-width: 1px;
+  border-width: 0px 1px 1px 1px;
   border-color: rgb(110, 102, 102);
   border-style: solid;
 
@@ -40,11 +40,11 @@ ion-header{
 
 ion-card{
   border-radius: 0px;
-  margin:5px;
+
   box-shadow:0 0 5px #F7C2C2;
   background-color: #FEFAFE;
   font-family: 'Outfit', sans-serif;
-  margin-top: 18px;
+
 }
 
 
@@ -59,7 +59,7 @@ ion-card-title{
 
   #separation-title{
 
-    background-color: #F39FA0;;
+    background-color: #F39FA0;
   }
 
 

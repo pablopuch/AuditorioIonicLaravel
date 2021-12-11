@@ -1,3 +1,34 @@
+
+#navbar{
+  border-width: 1px;
+  border-color: rgb(110, 102, 102);
+  border-style: solid;
+  height: 76px;
+}
+
+
+
+
+#header-icon{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 55px;
+  color: #464040;
+
+  margin-bottom: 2px;
+ }
+
+
+
+#header-text{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 30px;
+color: #464040;
+  //  font-family: 'Outfit', sans-serif;
+   
+ }
+ 
 ion-content {
  
     --overflow: hidden;
@@ -5,7 +36,7 @@ ion-content {
     &::-webkit-scrollbar {
       display: none;
     }
-  
+ 
    
 
   }
@@ -15,7 +46,21 @@ ion-content {
   }
 
   ion-tab-button{
-    border-width: 1px;
+    border-width: 0px 1px 1px 1px;
     border-color: rgb(110, 102, 102);
     border-style: solid;
   }
+
+  .tabs-icons{
+  font-size: 4em;
+  color: #FF6B89;
+}
+
+ion-label{
+  font-size: 3em;
+}
+
+hr{
+  height: 2px;
+  background-color: black;
+}

@@ -1,6 +1,7 @@
 <ion-content has-header>
 
   <div id="container" *ngFor="let directorProject of directorProjectArray">
+    
     <ion-card>
       <ion-card-header>
 
@@ -20,7 +21,7 @@
           <ion-row>
             <ion-icon class="perfomance-icon" src="assets/solist.svg"></ion-icon>
             <h5 class="name-text">{{soloistProject.soloists.nameSoloist}}</h5>
-            <h6  class="title-text"><b>{{soloistProject.soloists.titleSoloist}}</b></h6>
+            <h6 class="title-text"><b>{{soloistProject.soloists.titleSoloist}}</b></h6>
 
           </ion-row>
         </ion-card-header>
@@ -29,6 +30,7 @@
     </div>
 
 
+<hr id="end-line">
 
   </div>
 

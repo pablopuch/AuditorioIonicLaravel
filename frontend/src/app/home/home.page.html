@@ -1,22 +1,16 @@
-<ion-header>
 
-  <ion-toolbar>
-    <ion-menu-button id="home-menu-container">
-      <ion-header>
-        <!-- <ion-menu-button menu="custom"></ion-menu-button> -->
-        <ion-title class="text-center">
-          <ion-icon id="home-icon" src="assets/home-music.svg"></ion-icon>
-          <!--<ion-icon id="music-icon" name="musical-notes"></ion-icon>-->
-          <span id="home-text">Inicio</span>
-        </ion-title>
-      </ion-header>
-    </ion-menu-button>
-  </ion-toolbar>
-</ion-header>
+  <ion-header>
+
+    <ion-toolbar id="navbar">
+      <ion-menu-button id="home-menu-container">
+        <ion-icon id="home-icon" src="assets/home-music.svg"></ion-icon>
+        <h2 id="home-text">Inicio</h2>
+      </ion-menu-button>
+    </ion-toolbar>
+  </ion-header>
 
 
-
-<ion-content has-header>
+<ion-content class='has-header has-subheader'>
   <!-- <div class="text-center" id=#square> -->
 
   <ion-grid id="square">
@@ -39,10 +33,10 @@
         </ion-card>
       </ion-col>
 
-     
+
     </ion-row>
 
-    <ion-row  id="essays">
+    <ion-row id="essays">
       <ion-icon class="essay-icon" id="#essay-icon" src="assets/musical-essay.svg"></ion-icon>
       <h2 class="event-type-text">Ensayos</h2>
     </ion-row>
@@ -61,8 +55,8 @@
         </ion-card>
       </ion-col>
 
-      
-      
+
+
     </ion-row>
 
   </ion-grid>
