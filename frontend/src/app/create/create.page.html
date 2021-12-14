@@ -1,8 +1,13 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>create</ion-title>
-  </ion-toolbar>
-</ion-header>
+
+  <ion-header>
+
+    <ion-toolbar id="navbar">
+      <ion-menu-button id="home-menu-container">
+        <ion-icon id="header-icon" src="assets/projects-color-icon.svg"></ion-icon>
+        <h2 id="header-text">Proyectos</h2>
+      </ion-menu-button>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content>
   <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
@@ -49,7 +54,7 @@
       <input id="note" type="text" formControlName="note">
     </div>
 
-    <button class="button" type="submit">Purchase</button>
+    <button id="create-button" class="button" type="submit">Crear</button>
   </form>
 </ion-content>
 

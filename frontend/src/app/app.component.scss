@@ -12,12 +12,10 @@
   }
 
 #home-icon{
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 55px;
-    color: #464040;
-    margin-right:10px;
-    margin-bottom: 2px;
+
+    font-size: 2.5em;
+margin-left: 5px;
+margin-top: 5px;
    }
 
 
@@ -78,4 +76,8 @@ h2{
     color: #464040;
      font-family: 'Outfit', sans-serif;
     font-weight: bold;
+}
+
+#login-item{
+  border-top: 1px solid grey;
 }

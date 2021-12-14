@@ -11,7 +11,6 @@ import { ProjectsService } from '../services/projects.service';
 export class ProjectsPage implements OnInit {
   public projectsArray: Array<Projects> = [];
   public projects: Projects;
-  counter = 0;
 
   constructor(private router: Router, private projectsService: ProjectsService) { }
 

@@ -6,23 +6,34 @@
     <ion-content>
       <ion-list>
         <ion-item  class="ion-no-padding" lines="none" routerLink="/home" routerLinkActive="active-link">
-          <ion-icon id="home-icon" src="assets/home-music.svg"></ion-icon>
+          <ion-icon id="home-icon" src="assets/home8.svg"></ion-icon>
           <h2>Inicio</h2>
 
         </ion-item>
 
         <ion-item  class="ion-no-padding" lines="none" routerLink="/projects">
 
-          <ion-icon id="projects-icon" src="assets/projects-icon.svg"></ion-icon>
+          <ion-icon id="projects-icon" src="assets/projects-color-icon.svg"></ion-icon>
           <h2 id="projects-text">Proyectos</h2>
         </ion-item>
 
-        <ion-item  class="ion-no-padding" id="configuration-item" lines="none" routerLink="/configuration">
-          <ion-icon id="configuration-icon" src="assets/configuration-icon.svg"></ion-icon>
-          <h2 id="configuration-text">Configuración</h2>
-        </ion-item>
+       
       </ion-list>
     </ion-content>
+
+    <ion-footer class="bar-stable" ng-click="logout()">
+      <ion-item  class="ion-no-padding" id="login-item" lines="none" routerLink="/login">
+        <ion-icon id="configuration-icon" src="assets/login-icon.svg"></ion-icon>
+        <h2 id="configuration-text">Iniciar sesión</h2>
+      </ion-item>
+      <ion-item  class="ion-no-padding"  lines="none" routerLink="/configuration">
+        <ion-icon id="configuration-icon" src="assets/configuration-icon.svg"></ion-icon>
+        <h2 id="configuration-text">Configuración</h2>
+      </ion-item>
+
+      
+
+   </ion-footer>
   </ion-menu>
 
 

@@ -63,6 +63,7 @@ Route::get('/type-schedule','App\Http\Controllers\TypeSchedulesController@index'
 Route::post('/type-schedule','App\Http\Controllers\TypeSchedulesController@store');
 Route::put('type-schedule/{id}','App\Http\Controllers\TypeSchedulesController@update');
 Route::delete('/type-schedule/{id}','App\Http\Controllers\TypeSchedulesController@destroy');
+Route::get('/type-schedule/{id}','App\Http\Controllers\TypeSchedulesController@show');
 
 Route::get('/room','App\Http\Controllers\RoomsController@index');
 Route::post('/room','App\Http\Controllers\RoomsController@store');

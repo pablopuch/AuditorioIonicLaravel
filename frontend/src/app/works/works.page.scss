@@ -43,7 +43,7 @@ ion-card{
 
   box-shadow:0 0 5px #F7C2C2;
   background-color: #FEFAFE;
-
+padding-bottom: 10px;
 }
 
 
@@ -106,12 +106,17 @@ ion-card-subtitle{
 }
 
 ion-card-header{
-  padding: 00px;
+  padding-top: 10px;
+  padding-left: 0px;
 }
 
 #duration-text{
-    margin-left: 250px;
- 
+  text-align: right;
+ float: right;
 }
 
+#orchestration-text{
+  text-align: left;
+  float: left;
+}
 h2{margin-left: 20px;}

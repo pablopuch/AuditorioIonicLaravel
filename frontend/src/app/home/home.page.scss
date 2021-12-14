@@ -31,12 +31,11 @@ ion-content {
 #home-icon{
   display: inline-block;
   vertical-align: middle;
-  font-size: 55px;
-  color: #464040;
+  font-size: 50px;
 
-  margin-bottom: 2px;
+
+ 
  }
-
 
 
 #home-text{
@@ -54,9 +53,10 @@ color: #464040;
   margin: 15px;
   //margin-top: 3px !important;
 
-  // background-color: #FEFAFE;
-  //box-shadow:0 0 2px black;
+  background-color: #FEFAFE;
 
+ box-shadow:0 0 1px rgb(177, 2, 148);
+ padding-bottom: 30px;
  }
 
 
@@ -90,16 +90,17 @@ color: #464040;
  .performance-card {
   margin:0;
   box-shadow:0 0 1px rgb(177, 2, 148);
+  
   border-width: 0px;
   border-color: rgb(110, 102, 102);
   border-style: solid;
   max-height: 250px !important;
-  background-color: #d0bfff17;
+  background-color: #b419cf17;
   border-radius: 0;
-  min-width: 250px;
- 
-  
+  width: 300px;
+
 }
+
 .essay-card{
   margin:0;
   box-shadow:0 0 1px rgb(248, 161, 0);
@@ -110,6 +111,9 @@ color: #464040;
   background-color: #f8bf0438;
   border-radius: 0;
   min-width: 250px;
+  width: 300px;
+
+  float: left;
 }
 
 
@@ -122,3 +126,30 @@ color: #464040;
 #essays{
   margin-top: 20px;
 }
+
+ion-slide{
+  height: auto !important;
+  height: 100%;
+  box-shadow:0 0 10px rgb(177, 2, 148);
+}
+
+ion-slides{
+  height: auto !important;
+}
+
+
+
+#date-text{
+  text-align: right;}
+
+  
+  #separation-in-card{
+
+    background-color: #000000;
+  }
+
+  #separation-title{
+
+    background-color: #000000;
+  }
+

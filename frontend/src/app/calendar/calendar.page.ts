@@ -16,7 +16,7 @@ export class CalendarPage implements OnInit {
 
   public scheduleArray: Array<Schedule> = [];
   public schedule: Schedule;
-  project_id = this.activatedRoute.snapshot.paramMap.get('id');;
+  project_id = this.activatedRoute.snapshot.paramMap.get('id');
   
  
 
