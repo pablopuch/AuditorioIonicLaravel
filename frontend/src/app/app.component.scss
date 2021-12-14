@@ -1,83 +1,65 @@
-// ion-header{
-//     height: 30px;
-   
-//     //background-color: #FEFAFE;
-//   }
-
- #navbar{
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&display=swap');
+#navbar {
     border-width: 1px;
     border-color: rgb(110, 102, 102);
     border-style: solid;
-   
-  }
-
-#home-icon{
-
-    font-size: 2.5em;
-margin-left: 5px;
-margin-top: 5px;
-   }
-
-
-  #home-text{
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 30px;
-
-   }
-
-   ion-menu{
-     padding:0;
-    border-width: 1px;
-    border-color: rgb(110, 102, 102);
-    border-style: solid;
-    width: 250px;
-  }
-
-  ion-item{
-      float:left;
-  }
-
- #separation-title{
-     background-color: hotpink;
-     width: 100px;
-     height:100px;
-
- }
-    
-   #configuration-icon{
-       font-size: 2.3em;
-       margin-left: 9px;
-       margin-top: 5px;
-   }
-   
-   ion-item {
-     h2{     position: fixed;
-left: 60px;}
-
-   }
-
-#projects-icon{
-  font-size: 2.5em;
-margin-left: 5px;
-margin-top: 5px;
 }
 
+ion-content {
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+ion-menu {
+    padding: 0;
+    border-left: 1px solid rgb(110, 102, 102);
+    border-top: 1px solid rgb(110, 102, 102);
+}
 
 ion-item {
-  padding:0;
-  border: none;
-  border-bottom: 1px solid grey;
-  width: 100%;
-  height:  55px;
+    float: left;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 100%;
+    height: 55px;
+    h2 {
+        position: fixed;
+        left: 60px;
+        // color: #464040;
+        font-family: 'Outfit', sans-serif;
+        font-weight: bold;
+    }
 }
 
-h2{
-    color: #464040;
-     font-family: 'Outfit', sans-serif;
-    font-weight: bold;
+#home-icon {
+    font-size: 2.5em;
+    margin-left: 5px;
+    margin-top: 5px;
 }
 
-#login-item{
-  border-top: 1px solid grey;
+#projects-icon {
+    font-size: 2.5em;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#login-item {
+    border-top: 1px solid grey;
+}
+
+#login-icon {
+    font-size: 2.3em;
+    margin-left: 9px;
+    margin-top: 5px;
+}
+
+#configuration-icon {
+    font-size: 2.3em;
+    margin-left: 9px;
+    margin-top: 5px;
 }
