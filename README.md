@@ -93,33 +93,31 @@ ionic serve -l
 (http://localhost:8200/ is often bugged, switch to http://localhost:8100/ open developer tools and use select a mobile resolution in "Toggle device toolbar")
 
 Now the app is running!!
+![Home](https://user-images.githubusercontent.com/91074551/146265703-694dce4a-329e-476b-bd89-a370778a9523.PNG)
+
+![Menu](https://user-images.githubusercontent.com/91074551/146265716-70f2032b-a292-4ec4-b902-d28faec91a59.PNG)
+
+![Project](https://user-images.githubusercontent.com/91074551/146265757-19876ff7-2a2d-401b-b459-463684b9f380.PNG)
+
+![Events' project](https://user-images.githubusercontent.com/91074551/146265794-cda7119f-54cd-4f82-9256-942e2e80b3a1.PNG)
+
+![Create event](https://user-images.githubusercontent.com/91074551/146265844-49850471-2e0d-4a19-acbf-6b53a1546d9a.PNG)
+
+![Update event](https://user-images.githubusercontent.com/91074551/146265860-34f5d756-cfd8-445d-8e2c-6f5182c6dd08.PNG)
+
+![Members' project](https://user-images.githubusercontent.com/91074551/146265881-9ebdc097-6854-4cd0-a287-34ad48a41639.PNG)
+
+![Works' project](https://user-images.githubusercontent.com/91074551/146265920-ce688cab-4824-4734-9c2a-136281b39760.PNG)
+
+![Login](https://user-images.githubusercontent.com/91074551/146265733-6dd6cdcb-4230-40ee-805b-1506cfb7aea9.PNG)
+
+![Configuration](https://user-images.githubusercontent.com/91074551/146265955-8a3d34a8-bdc5-4b2b-b910-f1f8fe3e51f5.PNG)
 
 
 ### Aspect
+*some icons could change besides some aspect changes towards final version*
 
-
-
-## (3.) Prototype 🔧
-***
-Basic protoype:
-
-*![Home](https://user-images.githubusercontent.com/91074551/141490949-079630b9-44c8-4268-a3f8-eb722faf5314.png)
-
-![Menu](https://user-images.githubusercontent.com/91074551/141491060-9f9055dd-396e-4da8-8277-c5907a366351.png)
-
-![Login](https://user-images.githubusercontent.com/91074551/141491070-ab433462-8a9f-404c-bee4-20bdc51d3541.png)
-
-![Calendar today](https://user-images.githubusercontent.com/91074551/141491089-71fef5b2-3a68-4c09-9357-ced1a3fba3b0.png)
-
-![Calendar](https://user-images.githubusercontent.com/91074551/141491095-63841cbf-fe83-4ac8-9098-b110788bd808.png)
-
-![Event's modal](https://user-images.githubusercontent.com/91074551/141491113-f68a6cf6-356b-4dd9-94c6-5ebf704b4e20.png)
-
-![Configuration](https://user-images.githubusercontent.com/91074551/141491154-2d2b1dc6-e3cf-4a86-9864-2629efcbadc0.png)
-
-
-
-Other features that could be implemented in the future:
+Other features that were thought:
 
 ![Records](https://user-images.githubusercontent.com/91074551/141491416-9e641c5f-be9e-4be8-87a3-1384ea239be7.png)
 
@@ -127,4 +125,8 @@ Other features that could be implemented in the future:
 ***
 
 ### Colaboration
-
+My class-mate in this project Pablo Punch, we helped a lot each other: https://github.com/pablopuch/ (here is his project: https://github.com/pablopuch/OFGC).
+https://github.com/tcrurav Our teacher Tiburcio over-helped everyone through the project, and his example of Ionic-Spring was very useful for my first CRUD (https://github.com/tcrurav/spring_ionic_21_22).
+Many videos of Develoteca's channel helped me for understanding laravel and creating the backend. Like this, for example: https://www.youtube.com/watch?v=9DU7WLZeam8.
+This tutorial on how to create a CRUD in Ionic: https://remotestack.io/ionic-http-requests-with-httpclient-get-post-put-delete-tutorial/.
+To create this README I was colsuting the README of one class-mate, Rubens Banez: https://github.com/rubensantibanezacosta/Ocio_Open/blob/main/README.md and this guide https://gist.github.com/vinkla/dca76249ba6b73c5dd66a4e986df4c8d.
