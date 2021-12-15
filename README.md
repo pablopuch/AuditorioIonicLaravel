@@ -5,7 +5,7 @@
 4. [Aspect](#aspect)
 5. [Collaboration](#collaboration)
 
-### General Info
+## General Info
 ***
 
 Musicians can check their projects, events and information inside [OFGC](https://ofgrancanaria.com/es) in an organised way. 
@@ -27,6 +27,7 @@ Before you start you need:
 * Node.js - https://nodejs.org/es/download/.
 
 ## Installation
+***
 Clone the repository:
 
 ```
@@ -94,10 +95,11 @@ ionic serve -l
 (http://localhost:8200/ is often bugged, switch to http://localhost:8100/ open developer tools and use select a mobile resolution in "Toggle device toolbar")
 
 Now the app is running!!
+***
 
-
-### Aspect
-*some icons could change besides some aspect changes towards final version*
+## Aspect
+***
+*some icons could change besides some aspect changes towards final version
 
 
 ![Home](https://user-images.githubusercontent.com/91074551/146265703-694dce4a-329e-476b-bd89-a370778a9523.PNG)
@@ -120,14 +122,14 @@ Now the app is running!!
 ![Login](https://user-images.githubusercontent.com/91074551/146265733-6dd6cdcb-4230-40ee-805b-1506cfb7aea9.PNG)
 
 ![Configuration](https://user-images.githubusercontent.com/91074551/146265955-8a3d34a8-bdc5-4b2b-b910-f1f8fe3e51f5.PNG)
-
-
-
 ***
 
-### Collaboration
+
+## Collaboration
+***
 My class-mate in this project Pablo Punch, we helped a lot each other: https://github.com/pablopuch/ (here is his project: https://github.com/pablopuch/OFGC).
 https://github.com/tcrurav Our teacher Tiburcio over-helped everyone through the project, and his example of Ionic-Spring was very useful for my first CRUD (https://github.com/tcrurav/spring_ionic_21_22).
 Many videos of Develoteca's channel helped me for understanding laravel and creating the backend. Like this, for example: https://www.youtube.com/watch?v=9DU7WLZeam8.
 This tutorial on how to create a CRUD in Ionic: https://remotestack.io/ionic-http-requests-with-httpclient-get-post-put-delete-tutorial/.
 To create this README and documentation I was colsuting the README of one class-mate, Rubens Banez: https://github.com/rubensantibanezacosta/Ocio_Open/blob/main/README.md and this guide https://gist.github.com/vinkla/dca76249ba6b73c5dd66a4e986df4c8d.
+***
