@@ -1,7 +1,8 @@
 ![Legend](https://user-images.githubusercontent.com/91074551/146281870-5a85539b-df91-4994-b628-787a4a54d322.png)
 
+![Model E-R](https://user-images.githubusercontent.com/91074551/146282483-ef0eda05-35e5-45e9-b1e2-ea7de9dbfb8a.png)
 
-![Model E-R](https://user-images.githubusercontent.com/91074551/146282430-f96dbc6c-1209-49bc-963e-2e72b3566467.png)
+
 
 
 ## Entitys 
