@@ -1,6 +1,7 @@
-![Modelo E-R Isaiah Martel drawio](https://user-images.githubusercontent.com/91074551/146281870-5a85539b-df91-4994-b628-787a4a54d322.png)
+![Leyenda](https://user-images.githubusercontent.com/91074551/146281870-5a85539b-df91-4994-b628-787a4a54d322.png)
 
-![Modelo E-R Isaiah Martel drawio (1)](https://user-images.githubusercontent.com/91074551/146281873-ce072fa8-b830-44dd-a48d-069b2fde5cc8.png)
+![Modelo E-R ](https://user-images.githubusercontent.com/91074551/146282337-d73cd904-1bee-4349-8980-88b12b7a9fa7.png)
+
 
 
 ## Entitys 
