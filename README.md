@@ -40,7 +40,7 @@ Clone the repository:
 ```
 git clone https://github.com/IsaiahMartel/AuditorioIonicLaravel
 ```
-####Backend
+##### Backend
 
 Switch to the backend
 
@@ -83,7 +83,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-###Frontend
+##### Frontend
 
 Switch to frontend
 ```
