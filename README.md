@@ -94,6 +94,10 @@ ionic serve -l
 (http://localhost:8200/ is often bugged, switch to http://localhost:8100/ open developer tools and use select a mobile resolution in "Toggle device toolbar")
 
 Now the app is running!!
+
+
+### Aspect
+*some icons could change besides some aspect changes towards final version*
 ![Home](https://user-images.githubusercontent.com/91074551/146265703-694dce4a-329e-476b-bd89-a370778a9523.PNG)
 
 ![Menu](https://user-images.githubusercontent.com/91074551/146265716-70f2032b-a292-4ec4-b902-d28faec91a59.PNG)
@@ -115,14 +119,7 @@ Now the app is running!!
 ![Configuration](https://user-images.githubusercontent.com/91074551/146265955-8a3d34a8-bdc5-4b2b-b910-f1f8fe3e51f5.PNG)
 
 
-### Aspect
-*some icons could change besides some aspect changes towards final version*
 
-Other features that were thought:
-
-![Records](https://user-images.githubusercontent.com/91074551/141491416-9e641c5f-be9e-4be8-87a3-1384ea239be7.png)
-
-![Mates](https://user-images.githubusercontent.com/91074551/141491418-5a55d220-7289-46bc-9af3-8253a9e7711c.png)
 ***
 
 ### Collaboration
