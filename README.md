@@ -106,7 +106,8 @@ Now the app is running!!
 
 ![Project](https://user-images.githubusercontent.com/91074551/146265757-19876ff7-2a2d-401b-b459-463684b9f380.PNG)
 
-![Events' project](https://user-images.githubusercontent.com/91074551/146265794-cda7119f-54cd-4f82-9256-942e2e80b3a1.PNG)
+![Events' project](https://user-images.githubusercontent.com/91074551/146268726-0193f39d-0c6f-4979-9de3-b4c268487557.PNG)
+
 
 ![Create event](https://user-images.githubusercontent.com/91074551/146265844-49850471-2e0d-4a19-acbf-6b53a1546d9a.PNG)
 
