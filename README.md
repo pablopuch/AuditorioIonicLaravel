@@ -2,8 +2,9 @@
 1. [General Info](#general-info)
 2. [Technologies](#technologies)
 3. [Installation](#installation)
-4. [Collaboration](#collaboration)
-5. [FAQs](#faqs)
+4. [Aspect](#aspect)
+5. [Collaboration](#collaboration)
+
 ### General Info
 ***
 
@@ -124,7 +125,7 @@ Other features that were thought:
 ![Mates](https://user-images.githubusercontent.com/91074551/141491418-5a55d220-7289-46bc-9af3-8253a9e7711c.png)
 ***
 
-### Colaboration
+### Collaboration
 My class-mate in this project Pablo Punch, we helped a lot each other: https://github.com/pablopuch/ (here is his project: https://github.com/pablopuch/OFGC).
 https://github.com/tcrurav Our teacher Tiburcio over-helped everyone through the project, and his example of Ionic-Spring was very useful for my first CRUD (https://github.com/tcrurav/spring_ionic_21_22).
 Many videos of Develoteca's channel helped me for understanding laravel and creating the backend. Like this, for example: https://www.youtube.com/watch?v=9DU7WLZeam8.
