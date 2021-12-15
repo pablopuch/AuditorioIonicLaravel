@@ -98,6 +98,8 @@ Now the app is running!!
 
 ### Aspect
 *some icons could change besides some aspect changes towards final version*
+
+
 ![Home](https://user-images.githubusercontent.com/91074551/146265703-694dce4a-329e-476b-bd89-a370778a9523.PNG)
 
 ![Menu](https://user-images.githubusercontent.com/91074551/146265716-70f2032b-a292-4ec4-b902-d28faec91a59.PNG)
