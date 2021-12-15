@@ -17,13 +17,13 @@ Musicians can check their projects, events and information inside [OFGC](https:/
 
 ## Technical
 ***
-###Technologies
+#### Technologies
 A list of technologies used within the project:
 * [Laravel](https://laravel.com/): Version 8.68.1
 * [Angular](https://angular.io/): Version 12.1.4 with [Ionic](https://ionicframework.com/): 
 Version 6.18.1, version Ionic Framework: @ionic/angular 5.9.1
 
-###Documentation
+#### Documentation
 
 
 ## Before instalation
