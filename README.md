@@ -9,15 +9,22 @@
 ***
 
 Musicians can check their projects, events and information inside [OFGC](https://ofgrancanaria.com/es) in an organised way. 
-
-### OFGC
-![Client](https://ofgrancanaria.com/wp-content/uploads/2020/03/Group.png)
-## Technologies
 ***
+### OFGC
+***
+![Client](https://ofgrancanaria.com/wp-content/uploads/2020/03/Group.png)
+
+
+## Technical
+***
+###Technologies
 A list of technologies used within the project:
 * [Laravel](https://laravel.com/): Version 8.68.1
 * [Angular](https://angular.io/): Version 12.1.4 with [Ionic](https://ionicframework.com/): 
 Version 6.18.1, version Ionic Framework: @ionic/angular 5.9.1
+
+###Documentation
+
 
 ## Before instalation
 ***
@@ -34,6 +41,7 @@ Clone the repository:
 git clone https://github.com/IsaiahMartel/AuditorioIonicLaravel
 ```
 ####Backend
+
 Switch to the backend
 
 ```
@@ -75,7 +83,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-####Frontend
+###Frontend
 
 Switch to frontend
 ```
@@ -95,7 +103,7 @@ ionic serve -l
 (http://localhost:8200/ is often bugged, switch to http://localhost:8100/ open developer tools and use select a mobile resolution in "Toggle device toolbar")
 
 Now the app is running!!
-***
+
 
 ## Aspect
 ***
