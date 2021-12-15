@@ -9,7 +9,7 @@
 
 Musicians can check their projects, events and information inside [OFGC](https://ofgrancanaria.com/es) in an organised way. 
 
-### Screenshot
+### OFGC
 ![Client](https://ofgrancanaria.com/wp-content/uploads/2020/03/Group.png)
 ## Technologies
 ***
@@ -129,4 +129,4 @@ My class-mate in this project Pablo Punch, we helped a lot each other: https://g
 https://github.com/tcrurav Our teacher Tiburcio over-helped everyone through the project, and his example of Ionic-Spring was very useful for my first CRUD (https://github.com/tcrurav/spring_ionic_21_22).
 Many videos of Develoteca's channel helped me for understanding laravel and creating the backend. Like this, for example: https://www.youtube.com/watch?v=9DU7WLZeam8.
 This tutorial on how to create a CRUD in Ionic: https://remotestack.io/ionic-http-requests-with-httpclient-get-post-put-delete-tutorial/.
-To create this README I was colsuting the README of one class-mate, Rubens Banez: https://github.com/rubensantibanezacosta/Ocio_Open/blob/main/README.md and this guide https://gist.github.com/vinkla/dca76249ba6b73c5dd66a4e986df4c8d.
+To create this README and documentation I was colsuting the README of one class-mate, Rubens Banez: https://github.com/rubensantibanezacosta/Ocio_Open/blob/main/README.md and this guide https://gist.github.com/vinkla/dca76249ba6b73c5dd66a4e986df4c8d.
