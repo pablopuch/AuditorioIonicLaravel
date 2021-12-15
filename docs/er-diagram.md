@@ -2,7 +2,7 @@
 
 
 ## Entitys 
-*every entity has an  id which is primary key, int, not null and with auto-increment.
+Every entity has an  id which is primary key, int, not null and with auto-increment.
 
 ### Directors
 nameDirector (String, NOT NULL) director’s name and surname, titleDirector (String) (?).
