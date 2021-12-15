@@ -1,4 +1,6 @@
+![Modelo E-R Isaiah Martel drawio](https://user-images.githubusercontent.com/91074551/146281870-5a85539b-df91-4994-b628-787a4a54d322.png)
 
+![Modelo E-R Isaiah Martel drawio (1)](https://user-images.githubusercontent.com/91074551/146281873-ce072fa8-b830-44dd-a48d-069b2fde5cc8.png)
 
 
 ## Entitys 
@@ -11,7 +13,8 @@ DirectorsProjects: project_id (foreign key, int, NOT NULL) id from Projects enti
 ### Soloists: 
 autores_id (int, NOT NULL) (?), nameSoloist (String, NOT NULL) soloist’s name and surname, titleDirector (String) if it is director or musician.
 
-###SoloistProjects: project_id (foreign key, NOT NULL) id from Projects entity, director_id (foreign key, NOT NULL), id from Directors entity.
+### SoloistProjects
+project_id (foreign key, NOT NULL) id from Projects entity, director_id (foreign key, NOT NULL), id from Directors entity.
 
 ### Seasons:
 nameSeason (String, NOT NULL) name of the season, startDate (Date) the date that the season starts, endDate (Date) the date that the season ends, noteSeason (String) notes,ideas or description, that can be added about the season.
@@ -32,7 +35,7 @@ id (int, NOT NULL, auto-increment), nameRoom (String, NOT NULL) name of the room
 nameComposer (String, NOT NULL) Composer’s name, surnameComposer (String, NOT NULL) Composer’s surname.
 
 ### Works
-composer_id (foreign key, int, NOT NULL) id from the Composer entity, nameWork (String, NOT NULL) title of the work, duration (Time, NOT NULL) how much it last, orchestrationWork (?), stringWork (?), notes (String) notes that can be added, like ideas or thoughts.
+composer_id (foreign key, int, NOT NULL) id from the Composer entity, nameWork (String, NOT NULL) title of the work, duration (Time, NOT NULL) how much it last, orchestrationWork (String), notes (String) notes that can be added, like ideas or thoughts.
 
 ### Playlists
 project_id (foreign key, int, NOT NULL) id from the Project entity, work_id (foreign key, int, NOT NULL) id from the Work entity, composer_id (foreign key, int, NOT NULL) id from the Composer entity, orchestrationProject,  stringProject (String), order (String, NOT NULL) order of the works inside the playlist.
