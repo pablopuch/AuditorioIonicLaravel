@@ -79,10 +79,12 @@ class WorksController extends Controller
     public function update(Request $request, $id)
     {
         $work = Works::findOrFail($request->id);
-        $work-> namework = $request->  namework;
-        $work->startDatework= $request->startDate;
-        $work->endDatework=$request->endDate;
-        $work->published=$request->published;
+        $work-> nameWork = $request->  nameWork;
+        $work->composer_id= $request -> composer_id;
+        $work->duration=$request -> duration;
+        $work->notes=$request->notes;
+        $work->orchestrationWork=$request->orchestrationWork;
+        $work->stringWork=$request->stringWork;
         
         $work->save();
 

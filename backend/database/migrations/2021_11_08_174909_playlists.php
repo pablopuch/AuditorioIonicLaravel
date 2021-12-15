@@ -22,11 +22,13 @@ class Playlists extends Migration
 
             $table->bigInteger('project_id')->unsigned();
             $table->bigInteger('work_id')->unsigned();
+            $table->bigInteger('composer_id')->unsigned();
 
             $table->timestamps();
 
             $table->foreign('project_id')->references('id')->on('projects')->onDelete("cascade");
             $table->foreign('work_id')->references('id')->on('works')->onDelete("cascade");
+            $table->foreign('composer_id')->references('id')->on('composers')->onDelete("cascade");
         });
     }
 

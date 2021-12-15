@@ -8,6 +8,27 @@ use Illuminate\Database\Eloquent\Model;
 class Schedules extends Model
 {
     use HasFactory;
+
+    
+    static $rules = [
+		'project_id' => 'required',
+		'type_schedules_id' => 'required',
+		'rooms_id' => 'required',
+		'date' => 'required',
+		'hourRange' => 'required',
+		'note' => 'nullable',
+    ];
+
+    protected $perPage = 20;
+
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['project_id','type_schedules_id','rooms_id','date','hourRange','note'];
+
+
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

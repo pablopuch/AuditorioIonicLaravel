@@ -19,7 +19,7 @@ class CreateSeasonsTable extends Migration
             $table->string('NameSeason');
             $table->date('startDate');
             $table->date('endDate');
-            $table->string('noteSeason');
+            $table->string('noteSeason')->nullable();
             $table->timestamps();
         });
     }

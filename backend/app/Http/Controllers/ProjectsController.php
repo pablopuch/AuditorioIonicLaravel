@@ -78,11 +78,12 @@ class ProjectsController extends Controller
     public function update(Request $request, $id)
     {
         $project = projects::findOrFail($request->id);
-        $project-> nameProject = $request->  nameProject;
+        $project-> nameproject = $request->  nameproject;
         $project->startDateProject= $request->startDateProject;
         $project->endDateProject=$request->endDateProject;
         $project->published=$request->published;
         $project->seasons_id=$request->seasons_id;
+        $project->orchestrationProject=$request->orchestrationProject;
         
         $project->save();
 

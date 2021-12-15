@@ -9,6 +9,20 @@ class Composers extends Model
 {
     use HasFactory;
 public $timestamps = false;
+
+static $rules = [
+    'nameComposer' => 'required',
+    'surnameComposer' => 'required',
+];
+
+protected $perPage = 20;
+
+/**
+ * Attributes that should be mass-assignable.
+ *
+ * @var array
+ */
+protected $fillable = ['nameComposer','surnameComposer'];
     
     public function works()
     {

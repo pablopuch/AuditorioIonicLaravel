@@ -9,6 +9,27 @@ class Projects extends Model
 {
     use HasFactory;
     
+  
+    static $rules = [
+		'seasons_id' => 'required',
+		'nameProject' => 'required',
+		'starDateProject' => 'required',
+		'endDateProject' => 'required',
+		'published' => 'required',
+        'orchestrationProject' => 'required'
+    ];
+
+    protected $perPage = 20;
+
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['seasons_id','name','starDate','endDate','published, orchestrationProject'];
+
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -25,11 +46,6 @@ class Projects extends Model
         return $this->hasMany('App\Models\Shedule');
     }
 
-    public function directors()
-    {
-        return $this->hasMany('App\Models\Directors');
-    }
-
     public function directorsProjects()
     {
         return $this->hasMany('App\Models\DirectorProjects');
@@ -37,8 +53,11 @@ class Projects extends Model
 
     public function soloistProjects()
     {
-        return $this->hasMany('App\SoloistProjects');
+        return $this->hasMany('App\Models\SoloistProjects');
     }
 
 
+    public function playlists(){
+        return $this->hasMany('App\Models\Playlists');
+    }
 }

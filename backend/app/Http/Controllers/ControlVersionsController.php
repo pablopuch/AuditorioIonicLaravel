@@ -38,10 +38,11 @@ class ControlVersionsController extends Controller
      public function store(Request $request)
      {
          $controlVersion = new ControlVersions();
-         $controlVersion-> namecontrolVersion = $request->  namecontrolVersion;
-         $controlVersion->startDatecontrolVersion= $request->startDate;
-         $controlVersion->endDatecontrolVersion=$request->endDate;
-         $controlVersion->published=$request->published;
+         $controlVersion->project_id=$request->project_id;
+         $controlVersion->startDate= $request->startDate;
+         $controlVersion->upgradeDate=$request->upgradeDate;
+         $controlVersion-> published = $request->  published;
+         
          
          $controlVersion->save();
      }
@@ -78,10 +79,10 @@ class ControlVersionsController extends Controller
      public function update(Request $request, $id)
      {
          $controlVersion = ControlVersions::findOrFail($request->id);
-         $controlVersion-> namecontrolVersion = $request->  namecontrolVersion;
-         $controlVersion->startDatecontrolVersion= $request->startDate;
-         $controlVersion->endDatecontrolVersion=$request->endDate;
-         $controlVersion->published=$request->published;
+         $controlVersion->project_id=$request->project_id;
+         $controlVersion->startDate= $request->startDate;
+         $controlVersion->upgradeDate=$request->upgradeDate;
+         $controlVersion-> published = $request->  published;
          
          $controlVersion->save();
  

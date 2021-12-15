@@ -6,25 +6,97 @@
 5. [FAQs](#faqs)
 ### General Info
 ***
-Write down the general informations of your project. It is worth to always put a project status in the Readme file. This is where you can add it. 
+
+Musicians can check their projects, events and information inside [OFGC](https://ofgrancanaria.com/es) in an organised way. 
+
 ### Screenshot
-![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
+![Client](https://ofgrancanaria.com/wp-content/uploads/2020/03/Group.png)
 ## Technologies
 ***
 A list of technologies used within the project:
-* [Technologie name](https://example.com): Version 12.3 
-* [Technologie name](https://example.com): Version 2.34
-* [Library name](https://example.com): Version 1234
-## Installation
+* [Laravel](https://laravel.com/): Version 8.68.1
+* [Angular](https://angular.io/): Version 12.1.4 with [Ionic](https://ionicframework.com/): 
+Version 6.18.1, version Ionic Framework: @ionic/angular 5.9.1
+
+## Before instalation
 ***
-A little intro about the installation. 
+Before you start you need:
+* Git - https://git-scm.com/downloads.
+* MySQL - https://www.mysql.com/downloads/.
+* Node.js - https://nodejs.org/es/download/.
 
-describes la usabilidad ... hasta el momento
+## Installation
+Clone the repository:
 
-_Dí cómo será ese paso_
+```
+git clone https://github.com/IsaiahMartel/AuditorioIonicLaravel
+```
+####Backend
+Switch to the backend
 
-### Accesibilidad
-### Aspecto
+```
+cd AuditorioIonicLaravel/backend/
+```
+Install all the dependencies using composer
+```
+composer install
+```
+Copy the example env file and make the required configuration changes in the .env file 
+```
+cp .env.example .env
+```
+Generate a new application key
+```
+php artisan key:generate
+```
+
+Run the database migrations (Set the database connection in .env before migrating)
+
+```
+php artisan migrate
+```
+
+Start the local development server
+```
+php artisan serve
+```
+
+You can now access the server at http://localhost:8000
+
+TL;DR command list
+
+```
+git clone https://github.com/pablopuch/OFGC.git
+cd OFGC/backend/
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+
+####Frontend
+
+Switch to frontend
+```
+cd OFGC/fronted/
+```
+
+Install all the dependencies using npm
+```
+npm install
+```
+
+Start the local development server
+
+```
+ionic serve -l
+```
+(http://localhost:8200/ is often bugged, switch to http://localhost:8100/ open developer tools and use select a mobile resolution in "Toggle device toolbar")
+
+Now the app is running!!
+
+
+### Aspect
+
 
 
 ## (3.) Prototype 🔧
@@ -54,4 +126,5 @@ Other features that could be implemented in the future:
 ![Mates](https://user-images.githubusercontent.com/91074551/141491418-5a55d220-7289-46bc-9af3-8253a9e7711c.png)
 ***
 
-## Ejecutando las pruebas ⚙️
+### Colaboration
+

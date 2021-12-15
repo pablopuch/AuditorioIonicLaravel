@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
 import { catchError, tap } from 'rxjs/operators';
-import { TypeSchedule } from 'src/app/models/typee-schedule/type-schedule';
+import { TypeSchedule } from 'src/app/models/type-schedule/type-schedule';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class TypeScheduleService {
   getTypeScheduleById(id): Observable<TypeSchedule[]> {
     return this.httpClient.get<TypeSchedule[]>(this.endpoint + '/' + id)
       .pipe(
-        tap(_ => console.log(`Schedule fetched: ${id}`)),
+        tap(_ => console.log(`Type schedule fetched: ${id}`)),
         catchError(this.handleError<TypeSchedule[]>(`Get type schedule id=${id}`))
       );
   }

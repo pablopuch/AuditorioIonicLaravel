@@ -75,11 +75,8 @@ class ComposersController extends Controller
     public function update(Request $request, $id)
     {
         $composer = Composers::findOrFail($request->id);
-        $composer-> namecomposer = $request->  namecomposer;
-        $composer->startDatecomposer= $request->startDate;
-        $composer->endDatecomposer=$request->endDate;
-        $composer->published=$request->published;
-        
+        $composer-> nameComposer = $request->  nameComposer;
+        $composer->surnameComposer= $request->surnameComposer;
         $composer->save();
 
         return $composer;

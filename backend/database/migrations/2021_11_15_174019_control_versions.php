@@ -20,7 +20,8 @@ class ControlVersions extends Migration
             $table->bigInteger('project_id')->unsigned();
             $table->Date('startDate');
             $table->Date('upgradeDate')->nullable();
-            
+            $table->boolean('published')();
+
             $table->foreign('project_id')->references('id')->on('projects')->onDelete("cascade");
             
         });

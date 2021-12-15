@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./views/home/home.module').then( m => m.HomePageModule)
   },
  
   {
@@ -23,31 +23,31 @@ const routes: Routes = [
   
   {
     path: 'create',
-    loadChildren: () => import('./create/create.module').then( m => m.CreatePageModule)
+    loadChildren: () => import('./views/create/create.module').then( m => m.CreatePageModule)
   },
   {
     path: 'update/:id',
-    loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
+    loadChildren: () => import('./views/update/update.module').then( m => m.UpdatePageModule)
   },
   {
     path: 'projects',
-    loadChildren: () => import('./projects/projects.module').then( m => m.ProjectsPageModule)
+    loadChildren: () => import('./views/projects/projects.module').then( m => m.ProjectsPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./views/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'tabs',
-    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+    loadChildren: () => import('./views/tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
     path: 'configuration',
-    loadChildren: () => import('./configuration/configuration.module').then( m => m.ConfigurationPageModule)
+    loadChildren: () => import('./views/configuration/configuration.module').then( m => m.ConfigurationPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./views/register/register.module').then( m => m.RegisterPageModule)
   },
 
 

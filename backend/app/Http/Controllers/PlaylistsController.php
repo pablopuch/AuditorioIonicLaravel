@@ -43,6 +43,7 @@ class PlaylistsController extends Controller
         $playlist->orchestrationTotal=$request->orchestrationTotal;
         $playlist->project_id=$request->project_id;
         $playlist->work_id=$request->work_id;
+        $playlist->composer_id=$request->composer_id;
     
         $playlist->save();
     }
@@ -60,7 +61,7 @@ class PlaylistsController extends Controller
 
     public function showByProjectId(Request $request)
     {
-    $playlist = Playlists::where('project_id', '=' ,$request->id)->with('works','composers')->get();
+    $playlist = Playlists::where('project_id', '=' ,$request->id)->with('works','composers','projects')->get();
     return $playlist;
     }
 
@@ -85,10 +86,12 @@ class PlaylistsController extends Controller
     public function update(Request $request, $id)
     {
         $playlist = Playlists::findOrFail($request->id);
-        $playlist-> nameplaylist = $request->  nameplaylist;
-        $playlist->startDateplaylist= $request->startDate;
-        $playlist->endDateplaylist=$request->endDate;
-        $playlist->published=$request->published;
+        $playlist-> stringProject = $request->  stringProject;
+        $playlist->order= $request->order;
+        $playlist->orchestrationTotal=$request->orchestrationTotal;
+        $playlist->project_id=$request->project_id;
+        $playlist->work_id=$request->work_id;
+        $playlist->composer_id=$request->composer_id;
         
         $playlist->save();
 

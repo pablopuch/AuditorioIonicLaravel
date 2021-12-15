@@ -9,6 +9,22 @@ class Rooms extends Model
 {
     use HasFactory;
 
+      
+    static $rules = [
+		'nameRoom' => 'required',
+		'acronymRoom' => 'required',
+    ];
+
+    protected $perPage = 20;
+
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['nameRoom','acronymRoom'];
+
+
         /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

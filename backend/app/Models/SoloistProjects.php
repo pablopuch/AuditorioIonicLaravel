@@ -9,6 +9,22 @@ class SoloistProjects extends Model
 {
     use HasFactory;
 
+       
+    static $rules = [
+		'project_id' => 'required',
+		'soloist_id' => 'required',
+    ];
+
+    protected $perPage = 20;
+
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['project_id','soloist_id'];
+
+
     public function projects()
     {
         return $this->hasOne('App\Models\Projects', 'id', 'project_id');
