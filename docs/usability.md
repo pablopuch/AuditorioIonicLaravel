@@ -30,6 +30,7 @@ Something that we said already but that we can highlight is that everything is i
 
 ### Icons
 All are very clear but also gives that contrast that we searched of making the app more attractive, because they are all really colorful.
+
 ![configuration](https://user-images.githubusercontent.com/91074551/146285233-3a735b84-2be1-458d-8c4a-a6b4ce0ca816.png)
 ![orchestra](https://user-images.githubusercontent.com/91074551/146285239-28e05025-28d2-4564-8a2f-147f2771712e.png)
 
