@@ -4,7 +4,8 @@ The main objective when designing the app was trying to making accesible for all
 also wanted to make it elegant in some way.
 
 ![tabs-calendar-update](https://user-images.githubusercontent.com/91074551/146284182-df1fdd5c-54da-4809-b075-4f242e74fea2.PNG)
-![login](https://user-images.githubusercontent.com/91074551/146283524-976e6b0d-ae29-4b54-8cda-44484d1cc24f.PNG)
+![login](https://user-images.githubusercontent.com/91074551/146287546-2946a8f8-95b7-4b8a-819f-6b6f2e29d328.PNG)
+
 
 We can appreciate that the design is colorful, but without saturation; the information is displayed in a pretty-clear way.
 
