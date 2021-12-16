@@ -89,7 +89,7 @@ php artisan key:generate
 ```
 
 ### Data base
-We also uploaded the database that was used to test the application, you can check it in "AuditorioIonicLaravel/database-example" (all the data was used only for testing, that is because is so random).
+We also uploaded the database that was used to test the application, you can check it in "AuditorioIonicLaravel/database-example".
 
 If you want to add your own information, the tables that have effect on the frontend are: Seasons, Projects, Rooms, Schedules, TypeSchedules, Directors, DirectorsProjects, Soloists, Soloists-projects, Composers, Works and Playlists.
 
