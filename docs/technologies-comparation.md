@@ -1,3 +1,5 @@
+[Go to README](https://github.com/IsaiahMartel/AuditorioIonicLaravel/blob/master/README.md)
+
 ## Technologies-comparation
 Our application is an hybrid one, since with develop it we created the backend as an api, so it can be used with some other frontend; and with use
 Ionic, an open source toolkit, which uses HTML, CSS y JavaScript*, like every other hybrid app. Ionic can be used with many frameworks and we decided to use Angular,
