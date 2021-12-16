@@ -1,3 +1,7 @@
+[Go to README](https://github.com/IsaiahMartel/AuditorioIonicLaravel/blob/master/README.md)
+
+# User requirements
+
 ## R1. Plataform
   ### R1.1. MObie aplication.
 ## R2. The main objective of the app is show all information about events to the musicians.
