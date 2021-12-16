@@ -30,16 +30,6 @@ export class ProjectsPage implements OnInit {
     })
   }
 
-  goToOtherPage() {
-    this.router.navigateByUrl("/other-page");
-  }
-
-  checkIfProjectIsPublished() {
-
-
-    console.log(this.projectsArray);
-
-  }
 }
 
 
