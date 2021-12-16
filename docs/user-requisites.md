@@ -6,7 +6,7 @@
 ## R5. The user can navigate through the app via a side menu.
 ## R6. Musicans can see their projects and their information. They will see:
   ## R6.1. Events' information (time, date, place, etc.).
-    R6.1.1. For this project you can update and create events in the app, but this feature won't be included in the final version of the app.
+   ### R6.1.1. For this project you can update and create events in the app, but this feature won't be included in the final version of the app.
   ## R6.2. Members' information (the musicians assignated in that project, that will be divided in directors and soloists).
   ## R6.3. Playlist' information (name of the works, composers, orchestration).
 ## R7. The app will have a section of configuration, with some customization features.
