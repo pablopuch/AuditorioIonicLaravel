@@ -24,7 +24,12 @@ A list of technologies used within the project:
 Version 6.18.1, version Ionic Framework: @ionic/angular 5.9.1
 
 #### Documentation
-
+- [ER diagram](https://github.com/IsaiahMartel/AuditorioIonicLaravel/blob/master/docs/er-diagram.md)
+- [Case uses](https://github.com/IsaiahMartel/AuditorioIonicLaravel/blob/master/docs/use-cases.md)
+- [User requisites](https://github.com/IsaiahMartel/AuditorioIonicLaravel/blob/master/docs/user-requisites.md)
+- [Usability](https://github.com/IsaiahMartel/AuditorioIonicLaravel/blob/master/docs/usability.md)
+- [Technologies comparation](https://github.com/IsaiahMartel/AuditorioIonicLaravel/blob/master/docs/technologies-comparation.md)
+- [Developer's notes](https://github.com/IsaiahMartel/AuditorioIonicLaravel/blob/master/docs/developer's-notes.md)
 
 ## Before instalation
 ***
