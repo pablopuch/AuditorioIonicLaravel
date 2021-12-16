@@ -14,7 +14,7 @@ it's that so I can stick very easily, and that is what I have been demostrating 
 The project has been tough, I think not because it was that tough, but more because I really did not have the habit to work in a consistent way. Although it has been enjoyable
 in many ways, but I do not think was that enjoyable for me that is for many class-mates that I see that excited with theirs, and not gonna lie that's something I wanted to have.
 But I did not have the strength to work the enough time I should, my time working on the project has been almost all working on class, without counting the last week that 
-I have not assisted but I avanced a lot, probably the most productive week I had in the project. With everything (sadly because has been on the end) I'm starting to acquire the 
+I have not assisted but I avanced a lot. With everything (sadly because has been on the end) I'm starting to acquire the 
 habit to work more in a consistent way and have been very enjoyable and releiving; and I look towards updating this project and working in other projects with this feeling.
 
 I obviously talking about the most important thing for me right now, but the process had very ups and downs: at the start and in some points was very exciting, I learned a lot
