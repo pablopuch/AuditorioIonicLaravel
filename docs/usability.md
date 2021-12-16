@@ -13,7 +13,6 @@ Everything in the app is quite simple to read and to understand, displayed in a 
 explain it. This gives the main goal that we wanted to achieve with the design: accesibility no matter who is using the app.
 
 ![proyectos](https://user-images.githubusercontent.com/91074551/146283195-05988115-314d-48b2-9c95-cdb96007891a.PNG)
-
 ![tabs-calendar](https://user-images.githubusercontent.com/91074551/146284292-e62cec1f-3500-4f39-b441-a6c9e153cb69.PNG).
 
 We also can appreciate that every section has the same "apperance rules" which gives consistent through all the app.
