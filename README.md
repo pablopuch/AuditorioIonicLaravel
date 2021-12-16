@@ -121,7 +121,6 @@ Now the app is running!!
 
 
 ![Home](https://user-images.githubusercontent.com/91074551/146451210-5d1ceea3-df13-4cd7-8c59-cc3566ca671a.PNG)
-
 ![Menu](https://user-images.githubusercontent.com/91074551/146265716-70f2032b-a292-4ec4-b902-d28faec91a59.PNG)
 
 ![Projects](https://user-images.githubusercontent.com/91074551/146451221-414c1ff2-fdd6-4d49-947c-2a925ce559ff.PNG)
