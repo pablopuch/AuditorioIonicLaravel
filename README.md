@@ -120,17 +120,19 @@ Now the app is running!!
 *some icons could change besides some aspect changes towards final version
 
 
-![Home](https://user-images.githubusercontent.com/91074551/146265703-694dce4a-329e-476b-bd89-a370778a9523.PNG)
+![Home](https://user-images.githubusercontent.com/91074551/146451210-5d1ceea3-df13-4cd7-8c59-cc3566ca671a.PNG)
+
 ![Menu](https://user-images.githubusercontent.com/91074551/146265716-70f2032b-a292-4ec4-b902-d28faec91a59.PNG)
 
-![Project](https://user-images.githubusercontent.com/91074551/146265757-19876ff7-2a2d-401b-b459-463684b9f380.PNG)
-![Events' project](https://user-images.githubusercontent.com/91074551/146268726-0193f39d-0c6f-4979-9de3-b4c268487557.PNG)
+![Projects](https://user-images.githubusercontent.com/91074551/146451221-414c1ff2-fdd6-4d49-947c-2a925ce559ff.PNG)
+![Events](https://user-images.githubusercontent.com/91074551/146451365-1bbd4474-c2b6-4238-891b-5fbd21796739.PNG)
+
 
 ![Create event](https://user-images.githubusercontent.com/91074551/146265844-49850471-2e0d-4a19-acbf-6b53a1546d9a.PNG)
 ![Update event](https://user-images.githubusercontent.com/91074551/146265860-34f5d756-cfd8-445d-8e2c-6f5182c6dd08.PNG)
 
-![Members' project](https://user-images.githubusercontent.com/91074551/146265881-9ebdc097-6854-4cd0-a287-34ad48a41639.PNG)
-![Works' project](https://user-images.githubusercontent.com/91074551/146265920-ce688cab-4824-4734-9c2a-136281b39760.PNG)
+![Members](https://user-images.githubusercontent.com/91074551/146451438-2409338a-3686-41b2-9e6e-84013838c9c5.PNG)
+![Works](https://user-images.githubusercontent.com/91074551/146451470-769c59c6-31bb-46b1-b61f-15e4f54576ab.PNG)
 
 ![Login](https://user-images.githubusercontent.com/91074551/146287831-fddb0def-a23b-4039-888e-c9df031f3821.PNG)
 ![Configuration](https://user-images.githubusercontent.com/91074551/146265955-8a3d34a8-bdc5-4b2b-b910-f1f8fe3e51f5.PNG)
