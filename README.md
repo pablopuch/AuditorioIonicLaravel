@@ -111,9 +111,7 @@ Now the app is running!!
 
 
 ![Home](https://user-images.githubusercontent.com/91074551/146265703-694dce4a-329e-476b-bd89-a370778a9523.PNG)
-
 ![Menu](https://user-images.githubusercontent.com/91074551/146265716-70f2032b-a292-4ec4-b902-d28faec91a59.PNG)
-
 ![Project](https://user-images.githubusercontent.com/91074551/146265757-19876ff7-2a2d-401b-b459-463684b9f380.PNG)
 
 ![Events' project](https://user-images.githubusercontent.com/91074551/146268726-0193f39d-0c6f-4979-9de3-b4c268487557.PNG)
