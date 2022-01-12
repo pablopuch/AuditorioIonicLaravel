@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { SchedulesService } from '../../services/schedule.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-create',
@@ -20,7 +20,7 @@ export class CreatePage implements OnInit {
     note: ''
   });
 
-  constructor(private router: Router, private formBuilder: FormBuilder, 
+  constructor(private router: Router, private formBuilder: FormBuilder,
     private scheduleService: SchedulesService, private activatedRoute: ActivatedRoute,
     private _location: Location) { }
 
@@ -30,21 +30,12 @@ export class CreatePage implements OnInit {
 
 
   onSubmit(): void {
-    
-
-
     this.scheduleService.createSchedule(this.createForm.value).subscribe(() => {
-   
+
       this.createForm.reset();
-    
-    this._location.back();
-   
+
+      this._location.back();
+
     });
-
-    
-    
-
   }
-
-
 }

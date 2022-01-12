@@ -12,6 +12,8 @@ describe('ConfigurationPage', () => {
       declarations: [ ConfigurationPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
+   
+    
 
     fixture = TestBed.createComponent(ConfigurationPage);
     component = fixture.componentInstance;
@@ -20,5 +22,14 @@ describe('ConfigurationPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+   });
+
+  fit('enableDarkMode() should put all body in dark', () => {
+    document.body.classList.remove("dark");
+     component.enableDarkMode();
+     component.enableDarkMode();
+    expect(document.body.classList.contains("dark")).toBeFalsy();
+
   });
 });
+

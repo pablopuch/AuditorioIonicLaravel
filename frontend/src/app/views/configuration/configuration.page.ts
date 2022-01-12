@@ -7,14 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigurationPage implements OnInit {
 darkMode: boolean = true;
-  constructor() { const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-  this.darkMode = prefersDark.matches;
+  constructor() {
   }
   ngOnInit() {
   }
 
   enableDarkMode(){
-    this.darkMode =!this.darkMode;
-    document.body.classList.toggle('dark');
+    document.body.classList.toggle('dark')
+    
   }
 }
