@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Directors;
-
+use Barryvdh\DomPDF\Facade as PDF;
 
 class DirectorsController extends Controller
 {
@@ -98,4 +98,23 @@ class DirectorsController extends Controller
     
             return $director;
         }
+
+        public function getAllDirectors(){
+            $director = Directors::all();
+            return view ('directors', compact('director'));
+        
+        }
+
+        public function downloadPDF()
+{
+ 
+    $director = Directors::all();
+    
+
+    return PDF::loadView('directors', compact('director'))
+        ->stream('directors.pdf');
+}
+
+
+
 }

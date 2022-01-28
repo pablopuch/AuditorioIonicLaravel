@@ -86,6 +86,9 @@ Route::get('/directors','App\Http\Controllers\DirectorsController@index');
 Route::post('/directors','App\Http\Controllers\DirectorsController@store');
 Route::put('/directors/{id}','App\Http\Controllers\DirectorsController@update');
 Route::delete('/directors/{id}','App\Http\Controllers\DirectorsController@destroy');
+Route::get('/directorsPDF','App\Http\Controllers\DirectorsController@getAllDirectors');
+//Route::get('/directorsPDF',[DirectorsController::class, 'getAllDirectors']);
+Route::get('/downloadDirectorsPDF', 'App\Http\Controllers\DirectorsController@downloadPDF');
 
 Route::get('/director-projects','App\Http\Controllers\DirectorProjectsController@index');
 Route::post('/director-projects','App\Http\Controllers\DirectorProjectsController@store');

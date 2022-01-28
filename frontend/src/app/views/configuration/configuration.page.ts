@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Platform } from '@ionic/angular';
+import { Browser } from '@capacitor/browser';
+
+
 @Component({
   selector: 'app-configuration',
   templateUrl: './configuration.page.html',
@@ -14,6 +18,11 @@ darkMode: boolean = true;
 
   enableDarkMode(){
     document.body.classList.toggle('dark')
-    
   }
+
+  downloadAndOpenPDF(){
+    Browser.open({ url: 'http://localhost:8000/api/downloadDirectorsPDF'});
+  }
+
+
 }
