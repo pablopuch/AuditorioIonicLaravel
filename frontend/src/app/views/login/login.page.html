@@ -14,7 +14,7 @@
         <div id="square">
             <h1 id="welcome-text">¡BIENVENIDX DE NUEVO!</h1>
 
-
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <h1 class="email-password-text">Email:</h1>
             <ion-row>
                 <ion-icon class="musical-note-icon" src="assets/musical-note.svg"></ion-icon>
@@ -25,6 +25,7 @@
                 <ion-icon class="musical-note-icon" src="assets/musical-note.svg"></ion-icon>
                 <input>
             </ion-row>
+            </form>
 
             <!-- <ion-checkbox id="remember-me-checkbox" class="checkbox-square" mode="md">
             </ion-checkbox>
