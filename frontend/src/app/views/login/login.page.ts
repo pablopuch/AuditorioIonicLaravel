@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/auth/auth.service';
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { User } from 'src/app/models/user/user';
 
 @Component({
   selector: 'app-login',
@@ -9,46 +12,47 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 })
 export class LoginPage implements OnInit {
 
-
-
-  loginForm: FormGroup;
-
-
-
   constructor(
-    private authService : AuthService,
-    public formBuilder: FormBuilder,
-  ) {
-   
-  }
+    private router: Router, 
+    private authService: AuthService, 
+    private alertController: AlertController) { }
 
   ngOnInit() {
+  }
 
-    this.loginForm = this.formBuilder.group({
-      project_id: '',
-      type_schedules_id: '',
-      rooms_id: '',
-      date: '',
-      hourRange: '',
-      note: ''
+  login(form){
+    let user: User = {
+      id: null,
+      username: form.value.email,
+      password: form.value.password,
+      name: null,
+      isAdmin: null
+    };
+    console.log(form.value.email + ", " + form.value.password)
+    this.authService.login(user).subscribe((res)=>{
+      if(!res.access_token) {
+        this.presentAlert("invalid credentials");
+        return;
+      }
+      this.router.navigateByUrl('/home');
+      form.reset();
+    }, err => {
+      this.presentAlert("Error");
     });
   }
 
-
-  onSubmit(): void {
-    this.authService.login(this.loginForm.value).subscribe(() => {
-
-      this.loginForm.reset();
-
-
-
+  async presentAlert(message: string) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Error',
+      subHeader: message,
+      message: 'Could not login. Try again.',
+      buttons: ['OK']
     });
+
+    await alert.present();
   }
-
-
-
-  }
-
+}
 
 
 

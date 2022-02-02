@@ -11,6 +11,7 @@
 
 <ion-content>
   <div id="square">
+    <form #form="ngForm" (ngSubmit)="register(form)">
     <div>
       <label for="project_id">
         Nombre
@@ -30,7 +31,8 @@
       </label>
       <input id="project-id" type="text" >
     </div>
-    <button id="register-button" class="button" type="submit">REGISTRARSE</button>
+    <button id="register-button" type="submit" class="button" type="submit">REGISTRARSE</button>
+  </form>
   </div>
 
 </ion-content>

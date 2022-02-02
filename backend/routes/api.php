@@ -13,11 +13,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::group([
+    'middleware' => 'auth',
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
+], function ($router) {
 Route::get('/seasons','App\Http\Controllers\SeasonsController@index');
 Route::post('/seasons','App\Http\Controllers\SeasonsController@store');
 Route::put('/seasons/{id}','App\Http\Controllers\SeasonsController@update');
@@ -95,7 +94,13 @@ Route::post('/director-projects','App\Http\Controllers\DirectorProjectsControlle
 Route::put('/director-projects/{id}','App\Http\Controllers\DirectorProjectsController@update');
 Route::delete('/director-projects/{id}','App\Http\Controllers\DirectorProjectsController@destroy');
 Route::get('/director-projects/projects/{id}','App\Http\Controllers\DirectorProjectsController@showByProjectId');
+});
 
 
+    Route::post('login', [\App\Http\Controllers\Api\V1\AuthController::class, 'login']);
+    Route::post('logout', [\App\Http\Controllers\Api\V1\AuthController::class, 'logout']);
+    Route::post('refresh', [\App\Http\Controllers\Api\V1\AuthController::class, 'refresh']);
+    Route::post('me', [\App\Http\Controllers\Api\V1\AuthController::class, 'me']);
+    Route::post('register', [\App\Http\Controllers\Api\V1\AuthController::class, 'register']);
 
-
+    

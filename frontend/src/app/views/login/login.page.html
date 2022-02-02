@@ -14,18 +14,18 @@
         <div id="square">
             <h1 id="welcome-text">¡BIENVENIDX DE NUEVO!</h1>
 
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <form #form="ngForm" (ngSubmit)="login(form)">
             <h1 class="email-password-text">Email:</h1>
             <ion-row>
                 <ion-icon class="musical-note-icon" src="assets/musical-note.svg"></ion-icon>
-                <input>
+                <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
             </ion-row>
             <h1 class="email-password-text">Contraseña:</h1>
             <ion-row>
                 <ion-icon class="musical-note-icon" src="assets/musical-note.svg"></ion-icon>
-                <input>
+                <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
             </ion-row>
-            </form>
+        
 
             <!-- <ion-checkbox id="remember-me-checkbox" class="checkbox-square" mode="md">
             </ion-checkbox>
@@ -34,8 +34,8 @@
 
 
             <h3 id="forgot-password-text">¿Olvidaste la contraseña?</h3>
-            <button id="login-button" class="button" type="submit">ENTRAR</button>
-
+            <button type="submit" id="login-button" class="button" type="submit">ENTRAR</button>
+        </form>
 
 
         </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { User } from 'src/app/models/user/user';
 
 @Component({
   selector: 'app-register',
@@ -9,13 +10,24 @@ import { FormBuilder } from '@angular/forms';
 })
 export class RegisterPage implements OnInit {
 
-
-  constructor(private router: Router, private formBuilder: FormBuilder,) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
 
-  
- 
+  register(form) {
+    let user: User = {
+      id: null,
+      username: form.value.email,
+      password: form.value.password,
+      name: form.value.name,
+      isAdmin: false
+    };
+    this.authService.register(user).subscribe((res) => {
+      this.router.navigateByUrl('home');
+    });
+  }
 
 }
+
+
