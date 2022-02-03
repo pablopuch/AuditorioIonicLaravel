@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
   login(form){
     let user: User = {
       id: null,
-      username: form.value.email,
+      email: form.value.email,
       password: form.value.password,
       name: null,
       isAdmin: null

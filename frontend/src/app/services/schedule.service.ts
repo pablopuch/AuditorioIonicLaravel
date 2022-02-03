@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Schedule } from '../models/schedule';
 import { catchError, tap } from 'rxjs/operators';
+import { Storage } from '@ionic/storage';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,20 +18,33 @@ const httpOptionsUsingUrlEncoded = {
 })
 export class SchedulesService {
 
+  token="";
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.token}`
+    })
   };
+
 
   endpoint: string = "http://localhost:8000/api/schedule";
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private storage:Storage) {
+    this.storage.get("access_token").then((token) => {
+      this.httpOptions.headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      })
+     
+    });  }
 
   getSchedules(): Observable<Schedule[]>{
-    return this.httpClient.get<Schedule[]>(this.endpoint);
+    console.log(this.token + " " + this.httpOptions);
+    return this.httpClient.get<Schedule[]>(this.endpoint, this.httpOptions);
   }
 
   getScheduleById(id): Observable<Schedule[]> {
-    return this.httpClient.get<Schedule[]>(this.endpoint + '/' + id)
+    return this.httpClient.get<Schedule[]>(this.endpoint + '/' + id, this.httpOptions)
       .pipe(
         tap(_ => console.log(`Schedule fetched: ${id}`)),
         catchError(this.handleError<Schedule[]>(`Get schedule id=${id}`))
@@ -38,7 +52,7 @@ export class SchedulesService {
   }
 
   getSchedulesByProjectId(projectId): Observable<Schedule[]>{
-    return this.httpClient.get<Schedule[]>(this.endpoint + "/projects/" + projectId).pipe(
+    return this.httpClient.get<Schedule[]>(this.endpoint + "/projects/" + projectId, this.httpOptions).pipe(
       tap(_=> console.log("Schedule retrieved")),
       catchError(this.handleError<Schedule[]>("Get shedule", []))
     );
@@ -55,9 +69,7 @@ export class SchedulesService {
    
     const body = bodyEncoded.toString();
 
-    console.log("createSchedule")
-    console.log(JSON.stringify(schedule))
-    return this.httpClient.post<Schedule>(this.endpoint, body, httpOptionsUsingUrlEncoded);
+    return this.httpClient.post<Schedule>(this.endpoint, body,  this.httpOptions);
   }
 
   updateSchedule(id, schedule: Schedule): Observable<any> {
@@ -77,7 +89,7 @@ export class SchedulesService {
 
 
 
-    return this.httpClient.put<Schedule>(this.endpoint + "/" + id, body, httpOptionsUsingUrlEncoded).pipe(
+    return this.httpClient.put<Schedule>(this.endpoint + "/" + id, body, this.httpOptions).pipe(
       tap(_=> console.log(`Shedule update : ${id}`)),
       catchError(this.handleError<Schedule[]>("Update schdule"))
     );;
@@ -85,7 +97,7 @@ export class SchedulesService {
 
 
   deleteSchedule(idSchedule: number): Observable<Schedule>{
-    return this.httpClient.delete<Schedule>(this.endpoint + "/" + idSchedule);
+    return this.httpClient.delete<Schedule>(this.endpoint + "/" + idSchedule, this.httpOptions);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tap } from  'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { AuthResponse } from 'src/app/models/auth-response';
 import { User } from 'src/app/models/user/user';
 import { Storage } from '@ionic/storage';
@@ -12,19 +12,21 @@ import { Storage } from '@ionic/storage';
 })
 export class AuthService {
 
-  AUTH_SERVER_ADDRESS:  string  =  'http://localhost:8000';
+  AUTH_SERVER_ADDRESS: string = 'http://localhost:8000';
 
-  constructor(private  httpClient:  HttpClient, private  storage:  Storage) { }
+  constructor(private httpClient: HttpClient, private storage: Storage) {
+   
+   }
 
-  private getOptions(user: User){
-    let base64UserAndPassword = window.btoa(user.username + ":" + user.password);
+  private getOptions(user: User) {
+    let base64UserAndPassword = window.btoa(user.email + ":" + user.password);
 
     let basicAccess = 'Basic ' + base64UserAndPassword;
 
     let options = {
       headers: {
-        'Authorization' : basicAccess,
-        'Content-Type' : 'application/x-www-form-urlencoded',
+        'Authorization': basicAccess,
+        'Content-Type': 'application/x-www-form-urlencoded',
       }
       //, withCredentials: true
     };
@@ -33,37 +35,45 @@ export class AuthService {
   }
 
 
-  register(user: User): Observable<AuthResponse> {
-    return this.httpClient.post<AuthResponse>(`${this.AUTH_SERVER_ADDRESS}/api/register/`, user, this.getOptions(user)).pipe(
-      tap(async (res:  AuthResponse ) => {
-
-        if (res.user) {
-          await this.storage.set("token", res.access_token);
-        }
-      })
-
-    );
+  register(user: User): Observable<any> {
+    //return this.httpClient.post<any>(`${this.AUTH_SERVER_ADDRESS}/api/register/`, JSON.stringify(user))
+    return this.httpClient.post<any>(`${this.AUTH_SERVER_ADDRESS}/api/register/`, user)
   }
+  //.pipe(
+  //   tap(async (res:  AuthResponse ) => {
+
+  //     if (res.user) {
+  //       await this.storage.set("token", res.access_token);
+  //     }
+  //   })
+
+  //  );
+
 
   login(user: User): Observable<AuthResponse> {
-    return this.httpClient.post(`${this.AUTH_SERVER_ADDRESS}/api/login`, null, this.getOptions(user)).pipe(
+    return this.httpClient.post(`${this.AUTH_SERVER_ADDRESS}/api/login`, user).pipe(
       tap(async (res: AuthResponse) => {
-
-        if (res.user) {
-          await this.storage.set("token", res.access_token);
+       
+        if (res.access_token) {
+          this.storage.ready().then(()=>{
+            console.log(" ::storage init")
+          }).then(async()=>{
+            await this.storage.set("access_token", res.access_token);
+          });
+        
         }
       })
     );
   }
 
   async logout() {
-    await this.storage.remove("token");
+    await this.storage.remove("access_token");
   }
 
   async isLoggedIn() {
     // return this.authSubject.asObservable();
-    let token = await this.storage.get("token");
-    if (token){ //Just check if exists. This should be checked with current date
+    let token = await this.storage.get("access_token");
+    if (token) { //Just check if exists. This should be checked with current date
       return true;
     }
     return false;
