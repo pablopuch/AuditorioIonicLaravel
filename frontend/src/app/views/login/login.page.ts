@@ -4,6 +4,7 @@ import { AlertController } from '@ionic/angular';
 
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { User } from 'src/app/models/user/user';
+import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -13,14 +14,15 @@ import { User } from 'src/app/models/user/user';
 export class LoginPage implements OnInit {
 
   constructor(
-    private router: Router, 
-    private authService: AuthService, 
+    private router: Router,
+    private authService: AuthService,
     private alertController: AlertController) { }
 
   ngOnInit() {
+    
   }
 
-  login(form){
+  login(form) {
     let user: User = {
       id: null,
       email: form.value.email,
@@ -28,14 +30,19 @@ export class LoginPage implements OnInit {
       name: null,
       isAdmin: null
     };
+
     console.log(form.value.email + ", " + form.value.password)
-    this.authService.login(user).subscribe((res)=>{
-      if(!res.access_token) {
+
+    this.authService.login(user).subscribe((res) => {
+      if (!res.access_token) {
         this.presentAlert("invalid credentials");
         return;
       }
+
       this.router.navigateByUrl('/home');
+
       form.reset();
+      
     }, err => {
       this.presentAlert("Error");
     });
@@ -57,6 +64,6 @@ export class LoginPage implements OnInit {
 
 
 
-  
+
 
 

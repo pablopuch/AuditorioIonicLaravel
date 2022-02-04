@@ -20,15 +20,16 @@ export class ProjectsPage implements OnInit {
 
 
   loadInfo() {
-    this.projectsService.getProjects().subscribe((p: Array<Projects>) => {
-      for (let project of p) {
-        if (project.published == true) {
-          this.projectsArray.push(project);
+  
+  //   this.projectsService.getProjects().subscribe((p: Array<Projects>) => {
+  //     for (let project of p) {
+  //       if (project.published == true) {
+  //         this.projectsArray.push(project);
         
-        }
-      }
-    })
-  }
+  //       }
+  //     }
+  //   })
+   }
 
 }
 

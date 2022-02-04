@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 import { AuthResponse } from 'src/app/models/auth-response';
 import { User } from 'src/app/models/user/user';
 import { Storage } from '@ionic/storage';
+import { LocalStorageService } from '../local-storage/local-storage.service';
 
 
 @Injectable({
@@ -14,9 +15,9 @@ export class AuthService {
 
   AUTH_SERVER_ADDRESS: string = 'http://localhost:8000';
 
-  constructor(private httpClient: HttpClient, private storage: Storage) {
-   
-   }
+  constructor(private httpClient: HttpClient, private storage: Storage, private localStorageService: LocalStorageService) {
+
+  }
 
   private getOptions(user: User) {
     let base64UserAndPassword = window.btoa(user.email + ":" + user.password);
@@ -53,17 +54,14 @@ export class AuthService {
   login(user: User): Observable<AuthResponse> {
     return this.httpClient.post(`${this.AUTH_SERVER_ADDRESS}/api/login`, user).pipe(
       tap(async (res: AuthResponse) => {
-       
+
         if (res.access_token) {
-          this.storage.ready().then(()=>{
-            console.log(" ::storage init")
-          }).then(async()=>{
-            await this.storage.set("access_token", res.access_token);
-          });
-        
+          this.localStorageService.setToken(res.access_token);
+          this.storage.ready().then(() => {
+            this.storage.set("access_token", res.access_token);
+          })
         }
-      })
-    );
+      }));
   }
 
   async logout() {

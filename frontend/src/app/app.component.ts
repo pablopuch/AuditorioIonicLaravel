@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LocalStorageService } from './services/local-storage/local-storage.service';
+import { ProjectsService } from './services/projects.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent   {
 
-  constructor() { }
+  constructor(private localStorageService:LocalStorageService) { }
 
 }

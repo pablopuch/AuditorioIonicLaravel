@@ -37,16 +37,16 @@ ion-content {
 
 ion-card {
     border-radius: 0px;
-    background-color: #fbfafe;
+    background-color: var(--ion-color-light);
     font-family: 'Outfit', sans-serif;
-    border: 2px solid #F7C2C2;
+    border: 2px solid var(--ion-color-danger-tint);
 }
 
 ion-card-title,
 ion-card-subtitle,
 ion-card-content {
     font-family: 'Outfit', sans-serif;
-    color: #464040;
+    color: var(--ion-color-dark);
 }
 
 #season-text {

@@ -1,10 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 import { Schedule } from '../../models/schedule';
 import { SchedulesService } from '../../services/schedule.service';
 import { Projects } from '../../models/projects';
 import { ProjectsService } from '../../services/projects.service';
-import { TypeScheduleService } from '../../services/type-schedule/type-schedule.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -16,45 +15,40 @@ export class HomePage {
   public schedule: Schedule;
   public projects_id: number[] = [];
   public projects: Projects;
-  public project_id = this.activatedRoute.snapshot.paramMap.get('id');
   public scheduleArray: Schedule[] = [];
 
-  constructor(private router: Router, private projectsService: ProjectsService,
-    private scheduleService: SchedulesService, private typeScheduleService: TypeScheduleService,
-    private activatedRoute: ActivatedRoute) { }
+  constructor(private projectsService: ProjectsService,
+    private scheduleService: SchedulesService) { }
 
   ngOnInit(): void {
-    this.loadInfo();
-
+    // this.loadInfo();
   }
 
+  ionViewDidEnter() {
+    this.loadInfo();
+  }
 
   loadInfo() {
-    this.projectsService.getProjects().subscribe((p: Array<Projects>) => {
-      for (let project of p) {
-        if (project.published == true) {
-          this.projects_id.push(project.id);
-          this.getSchedules();
-
-        }
-      }
+    this.projectsService.getProjects().then((o) => {
+      console.log(o)
+      o.subscribe((p) => {
+        console.log("esta es la salida")
+        console.log(p)
+        // for (let project of p) {
+        //   if (project.published == true) {
+        //     this.projects_id.push(project.id);
+        //     this.getSchedules();
+        //   }
+        // }
+      })
     });
-
-
-
   }
-
 
   getSchedules() {
     for (let i of this.projects_id) {
-
       this.scheduleService.getSchedulesByProjectId(i).subscribe((s: Array<Schedule>) => {
         this.scheduleArray = s;
-
       });
     }
-
   }
-
-
 }
