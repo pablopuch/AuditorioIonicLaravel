@@ -12,27 +12,34 @@
 <ion-content>
   <div id="square">
     <form #form="ngForm" (ngSubmit)="register(form)">
-    <div>
-      <label for="project_id">
-        Nombre
-      </label>
-      <ion-input id="project-id" type="text"></ion-input>
-    </div>
+      <div>
+        <label for="project_id">
+          Nombre
+        </label>
+        <ion-input id="project-id" type="text"></ion-input>
+      </div>
 
-    <div>
-      <label for="project_id">
-        Email
-      </label>
-      <ion-input name="email" type="email" ngModel required></ion-input>
-    </div>
-    <div>
-      <label for="project_id">
-        Contraseña
-      </label>
-      <ion-input name="password" type="password" ngModel required></ion-input>
-    </div>
-    <button id="register-button" type="submit" class="button" type="submit">REGISTRARSE</button>
-  </form>
+      <div>
+        <label for="project_id">
+          Email
+        </label>
+        <ion-input name="email" type="email" ngModel required></ion-input>
+      </div>
+      <div (capsLock)="capsOn=$event">
+        <label for="project_id">
+          Contraseña
+        </label>
+        <ion-input name="repeated" type="password" ngModel required></ion-input>
+        <label *ngIf="capsOn">Caps Locked</label>
+      </div>
+      <div>
+        <label for="project_id">
+          Repita la contraseña
+        </label>
+        <ion-input name="password" type="password" ngModel required></ion-input>
+      </div>
+      <button id="register-button" type="submit" class="button" type="submit">REGISTRARSE</button>
+    </form>
   </div>
 
 </ion-content>

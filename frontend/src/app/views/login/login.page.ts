@@ -31,8 +31,6 @@ export class LoginPage implements OnInit {
       isAdmin: null
     };
 
-    console.log(form.value.email + ", " + form.value.password)
-
     this.authService.login(user).subscribe((res) => {
       if (!res.access_token) {
         this.presentAlert("invalid credentials");
