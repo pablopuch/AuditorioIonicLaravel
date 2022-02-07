@@ -7,32 +7,45 @@ import { catchError, tap } from 'rxjs/operators';
 import {DirectorProjects} from '../models/director-projects'
 import { Storage } from '@ionic/storage';
 
+import { LocalStorageService } from './local-storage/local-storage.service';
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class DirectorProjectsService {
-  token="";
-  httpOptions = {
+  httpOptions =  {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.token}`
+      'Authorization': `Bearer ${""}`
     })
-  };
+  }
 
 
   endpoint: string = "http://localhost:8000/api/director-projects";
+  
+  constructor(private httpClient: HttpClient, private storage: Storage, private localStorageService: LocalStorageService) {
 
-  constructor(private httpClient: HttpClient, private storage:Storage) {
-    this.storage.get("access_token").then((token) => {
-      this.httpOptions.headers = new HttpHeaders({
+  }
+
+  async getHttpOptions(){
+   await this.localStorageService.getToken().then(o=>{
+      this.httpOptions =  {
+      headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      });
-    })
-   }
+        'Authorization': `Bearer ${o}`
+      })
+  
+    };
+   
+    ;});
+   
+  }
 
-  getDirectorProjectsByProjectId(projectId): Observable<DirectorProjects[]>{
-    return this.httpClient.get<DirectorProjects[]>(this.endpoint + "/projects/" + projectId, this.httpOptions).pipe(
+
+  async getDirectorProjectsByProjectId(projectId) {
+    await  this.getHttpOptions();
+    return await this.httpClient.get<DirectorProjects[]>(this.endpoint + "/projects/" + projectId, this.httpOptions).pipe(
       tap(_=> console.log("DirectorProject retrieved")),
       catchError(this.handleError<DirectorProjects[]>("Get director project", []))
     );

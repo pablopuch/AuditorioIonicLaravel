@@ -30,12 +30,13 @@ export class CreatePage implements OnInit {
 
 
   onSubmit(): void {
-    this.scheduleService.createSchedule(this.createForm.value).subscribe(() => {
+    this.scheduleService.createSchedule(this.createForm.value).then(o=>{o.subscribe(() => {
 
       this.createForm.reset();
 
       this._location.back();
 
     });
-  }
+  })
+}
 }

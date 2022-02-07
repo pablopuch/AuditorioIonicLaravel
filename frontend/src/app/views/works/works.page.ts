@@ -27,10 +27,11 @@ export class WorksPage implements OnInit {
   }
 
   loadInfo() {
-    this.playlistService.getPlaylistProjectsByProjectId(this.project_id).subscribe((s: Array<Playlists>) => {
+    this.playlistService.getPlaylistProjectsByProjectId(this.project_id).then(o => {
+      o.subscribe((s: Array<Playlists>) => {
       this.playlistArray = s;
     })
-
+  })
   }
 }
 

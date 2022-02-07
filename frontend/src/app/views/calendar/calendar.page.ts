@@ -29,18 +29,19 @@ export class CalendarPage implements OnInit {
   }
 
   loadInfo(){
-    this.scheduleService.getSchedulesByProjectId(this.project_id).subscribe((s: Array<Schedule>) => {
+    this.scheduleService.getSchedulesByProjectId(this.project_id).then(o=>{o.subscribe((s: Array<Schedule>) => {
       this.scheduleArray = s;
     })
-    
+  })
   }
 
 
 
   deleteSchedule(idSchedule: number){
-    this.scheduleService.deleteSchedule(idSchedule).subscribe(() => {
+    this.scheduleService.deleteSchedule(idSchedule).then(o=>{o.subscribe(() => {
       this.loadInfo();
     });
+  });
   }
 
 

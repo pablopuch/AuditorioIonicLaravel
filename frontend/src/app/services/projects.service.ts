@@ -12,19 +12,11 @@ import { LocalStorageService } from './local-storage/local-storage.service';
 })
 
 export class ProjectsService {
-  token = this.localStorageService.getToken().then((o) => {
-    this.token=o;
-  });
-
-
-  getHttpOptions() {
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.token}`
-      })
-    };
-    return httpOptions;
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${""}`
+    })
   }
 
   endpoint: string = "http://localhost:8000/api/projects";
@@ -33,8 +25,26 @@ export class ProjectsService {
 
   }
 
-  getProjects:  Observable<Projects[]>() {
-    return this.httpClient.get<Projects[]>(this.endpoint, this.getHttpOptions());
+  async getHttpOptions() {
+    await this.localStorageService.getToken().then(o => {
+      this.httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${o}`
+        })
+
+      };
+
+      ;
+    });
+
+  }
+
+  async getProjects() {
+
+    await this.getHttpOptions();
+
+    return await this.httpClient.get<Projects[]>(this.endpoint, this.httpOptions);
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

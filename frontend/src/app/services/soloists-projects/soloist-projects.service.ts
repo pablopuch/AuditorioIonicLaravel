@@ -8,32 +8,41 @@ import {SoloistProjects} from '../../models/soloist-projects'
 
 import { Storage } from '@ionic/storage';
 
+import { LocalStorageService } from '../local-storage/local-storage.service';
+
 @Injectable({
   providedIn: 'root'
 })
 export class SoloistProjectsService {
-
-  token="";
-  httpOptions = {
+  httpOptions =  {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.token}`
+      'Authorization': `Bearer ${""}`
     })
-  };
+  }
 
   endpoint: string = "http://localhost:8000/api/soloist-projects";
 
-  constructor(private httpClient: HttpClient, private storage:Storage) {
-    this.storage.get("access_token").then((token) => {
-      this.httpOptions.headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      })
-     
-    })};
+  constructor(private httpClient: HttpClient, private storage: Storage, private localStorageService: LocalStorageService) {
 
- getSoloistProjectsByProjectId(projectId): Observable<SoloistProjects[]>{
-    return this.httpClient.get<SoloistProjects[]>(this.endpoint + "/projects/" + projectId, this.httpOptions).pipe(
+  }
+
+  async getHttpOptions(){
+   await this.localStorageService.getToken().then(o=>{
+      this.httpOptions =  {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${o}`
+      })
+  
+    };
+   
+    ;});
+   
+  }
+ async getSoloistProjectsByProjectId(projectId) {
+  await this.getHttpOptions();
+    return await this.httpClient.get<SoloistProjects[]>(this.endpoint + "/projects/" + projectId, this.httpOptions).pipe(
       tap(_=> console.log("SoloistProject retrieved")),
       catchError(this.handleError<SoloistProjects[]>("Get soloist project", []))
     );

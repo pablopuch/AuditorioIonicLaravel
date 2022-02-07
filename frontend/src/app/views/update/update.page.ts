@@ -43,21 +43,25 @@ export class UpdatePage implements OnInit {
   }
 
   fetchSchedule(id) {
-    this.scheduleCrudService.getScheduleById(id).subscribe((data) => {
-      this.updateForm.setValue({
-        project_id: data[0]["project_id"],
-        type_schedules_id: data[0]['type_schedules_id'],
-        rooms_id: data[0]['rooms_id'],
-        date: data[0]['date'],
-        hourRange: data[0]['hourRange'],
-        note: data[0]['note']
+    this.scheduleCrudService.getScheduleById(id).then(o => {
+      o.subscribe((data) => {
+        this.updateForm.setValue({
+          project_id: data[0]["project_id"],
+          type_schedules_id: data[0]['type_schedules_id'],
+          rooms_id: data[0]['rooms_id'],
+          date: data[0]['date'],
+          hourRange: data[0]['hourRange'],
+          note: data[0]['note']
+        });
       });
     });
   }
 
   loadInfo() {
-    this.scheduleCrudService.getSchedules().subscribe((s: Array<Schedule>) => {
-      this.scheduleArray = s;
+    this.scheduleCrudService.getSchedules().then(o => {
+      o.subscribe((s: Array<Schedule>) => {
+        this.scheduleArray = s;
+      })
     })
   }
 
@@ -67,13 +71,20 @@ export class UpdatePage implements OnInit {
       return false;
     } else {
 
-      this.scheduleCrudService.updateSchedule(this.id, this.updateForm.value).subscribe(() => {
+      this.scheduleCrudService.updateSchedule(this.id, this.updateForm.value).then(o => {
+        o.subscribe(() => {
 
-        this.updateForm.reset();
+          this.updateForm.reset();
 
-        this._location.back();
+          this._location.back();
+
+        });
+
+
 
       });
+
+
 
 
 
@@ -83,7 +94,4 @@ export class UpdatePage implements OnInit {
 
 
   }
-
-
-
 }

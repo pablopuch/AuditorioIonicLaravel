@@ -16,6 +16,7 @@ export class HomePage {
   public projects_id: number[] = [];
   public projects: Projects;
   public scheduleArray: Schedule[] = [];
+  public projectsArray: Projects[] = [];
 
   constructor(private projectsService: ProjectsService,
     private scheduleService: SchedulesService) { }
@@ -29,11 +30,13 @@ export class HomePage {
   }
 
   loadInfo() {
-    this.projectsService.getProjects().then((o) => {
-      console.log(o)
-      o.subscribe((p) => {
-        console.log("esta es la salida")
-        console.log(p)
+    this.projectsService.getProjects().then(o => {
+      o.subscribe((p: Array<Projects>) => {
+        this.projectsArray = p.filter((project) => {
+          project.published == true;
+          this.projects_id.push(project.id);
+          this.getSchedules();
+        })
         // for (let project of p) {
         //   if (project.published == true) {
         //     this.projects_id.push(project.id);
@@ -41,13 +44,15 @@ export class HomePage {
         //   }
         // }
       })
-    });
+    })
   }
 
   getSchedules() {
     for (let i of this.projects_id) {
-      this.scheduleService.getSchedulesByProjectId(i).subscribe((s: Array<Schedule>) => {
-        this.scheduleArray = s;
+      this.scheduleService.getSchedulesByProjectId(i).then(o => {
+        o.subscribe((s: Array<Schedule>) => {
+          this.scheduleArray = s;
+        });
       });
     }
   }

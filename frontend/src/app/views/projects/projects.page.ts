@@ -19,19 +19,23 @@ export class ProjectsPage implements OnInit {
   }
 
 
-  loadInfo() {
-  
-  //   this.projectsService.getProjects().subscribe((p: Array<Projects>) => {
-  //     for (let project of p) {
-  //       if (project.published == true) {
-  //         this.projectsArray.push(project);
-        
-  //       }
-  //     }
-  //   })
-   }
+   loadInfo() {
+    this.projectsService.getProjects().then(o=>{o.subscribe((p: Array<Projects>) => {
+      console.log(p);
+      this.projectsArray = p.filter((project) => {
+        return project.published == true;
+      })
+        // for (let project of p) {
+        //   if (project.published == true) {
+        //     this.projectsArray.push(project);
+        //   }
+        // }
+      })
+    })
 
+  }
 }
+
 
 
 
