@@ -14,28 +14,35 @@
         <div id="square">
             <h1 id="welcome-text">¡BIENVENIDX DE NUEVO!</h1>
 
-            <form #form="ngForm" (ngSubmit)="login(form)">
-            <h1 class="email-password-text">Email:</h1>
-            <ion-row>
-                <ion-icon class="musical-note-icon" src="assets/musical-note.svg"></ion-icon>
-                <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
-            </ion-row>
-            <h1 class="email-password-text">Contraseña:</h1>
-            <ion-row>
-                <ion-icon class="musical-note-icon" src="assets/musical-note.svg"></ion-icon>
-                <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
-            </ion-row>
-        
+            <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+                <ion-item id="email-fields">
+                    <ion-label class="label" position="floating" for="project_id">Email</ion-label>
 
-            <!-- <ion-checkbox id="remember-me-checkbox" class="checkbox-square" mode="md">
+                    <ion-row>
+                        <ion-icon class="musical-note-icon" src="assets/musical-note.svg"></ion-icon>
+                        <ion-input name="email" type="email" placeholder="your@email.com" formControlName="email"
+                            required></ion-input>
+                    </ion-row>
+                </ion-item>
+                <ion-item id="password-fields">
+                    <ion-label class="label" position="floating" for="project_id">Contraseña</ion-label>
+                    <ion-row>
+                        <ion-icon class="musical-note-icon" src="assets/musical-note.svg"></ion-icon>
+                        <ion-input name="password" type="password" placeholder="Password" formControlName="password"
+                            required></ion-input>
+                    </ion-row>
+                </ion-item>
+
+
+                <!-- <ion-checkbox id="remember-me-checkbox" class="checkbox-square" mode="md">
             </ion-checkbox>
             <label for="remember-me-checkbox" id="remember-me-text">Recuérdame</label> -->
 
 
 
-            <h3 id="forgot-password-text">¿Olvidaste la contraseña?</h3>
-            <button type="submit" id="login-button" class="button" type="submit">ENTRAR</button>
-        </form>
+                <h3 id="forgot-password-text">¿Olvidaste la contraseña?</h3>
+                <button type="submit" id="login-button" class="button" type="submit">ENTRAR</button>
+            </form>
 
 
         </div>

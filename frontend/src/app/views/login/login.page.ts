@@ -5,6 +5,7 @@ import { AlertController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { User } from 'src/app/models/user/user';
 import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
+import { Validators, FormControl, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,21 +13,31 @@ import { LocalStorageService } from 'src/app/services/local-storage/local-storag
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  loginForm: FormGroup;
 
   constructor(
     private router: Router,
     private authService: AuthService,
-    private alertController: AlertController) { }
+    private alertController: AlertController,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(12), Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,12}$')])],
+    },
+
+    );
+
   }
 
-  login(form) {
+
+
+  login() {
     let user: User = {
       id: null,
-      email: form.value.email,
-      password: form.value.password,
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password,
       name: null,
       isAdmin: null
     };
@@ -39,8 +50,8 @@ export class LoginPage implements OnInit {
 
       this.router.navigateByUrl('/home');
 
-      form.reset();
-      
+      this.loginForm.reset();
+
     }, err => {
       this.presentAlert("Error");
     });

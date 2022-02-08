@@ -37,29 +37,34 @@ ion-content {
 }
 
 ion-input,
-label {
-    display: block;
+ion-label {
+   
     margin-left: auto;
     margin-right: auto;
+
+  
 }
 
-label {
+ion-label {
     font-weight: bold !important;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-left: 20px;
+    font-size: 2em;
+ 
 }
+
 
 ion-input {
     width: 80%;
-    font-weight: bold;
-    background-color: #7fd3fa;
-    color: white;
-    padding: 14px 20px;
-    margin-top: 10px;
-    border: 1px solid black;
-    border-radius: 4px;
+    // font-weight: bold;
+    // // background-color: #7fd3fa;
+    // color: white;
+    // padding: 14px 20px;
+    margin-top: 30px;
+    // border: 1px solid black;
+    // border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 0 1px #fa7f98;
+    // box-shadow: 0 0 1px #fa7f98;
     text-align: center;
 }
 
