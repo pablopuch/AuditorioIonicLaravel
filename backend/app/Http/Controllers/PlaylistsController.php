@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Playlists;
-
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PlaylistsController extends Controller
 {
@@ -112,4 +112,41 @@ class PlaylistsController extends Controller
 
         return $playlist;
     }
+
+    // public function viewInPDF(){
+    //     $playlist = Playlists::all();
+    //     return view ('playlists', compact('playlist'));
+    
+    // }
+
+    public function downloadPDF(Request $request)
+{
+
+    $playlist = Playlists::where('project_id', '=' ,$request->id)->with('works','composers','projects')->get();
+
+
+return PDF::loadView('playlists', compact('playlist'))
+    ->stream('playlists.pdf');
+}
+
+public function sendPDF(Request $request)
+        {
+            $playlist = Playlists::where('project_id', '=' ,$request->id)->with('works','composers','projects')->get();
+
+            $data["email"]=  Auth::user()->email;
+            $data["title"] = "From ItSolutionStuff.com";
+            $data["body"] = "This is Demo";
+            $pdf = PDF::loadView('playlists', compact('playlist'))->stream('playlists.pdf');
+       
+    
+                Mail::send('playlists', compact('playlist'), function($message)use($data, $pdf) {
+                    $message->to($data["email"], $data["email"])
+                            ->subject($data["title"])
+                            ->attachData($pdf, "text.pdf");
+                });
+         
+                    
+            
+    }
+
 }

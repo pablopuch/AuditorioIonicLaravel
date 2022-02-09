@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Projects;
+use Barryvdh\DomPDF\Facade as PDF;
+use Mail;
 
 class ProjectsController extends Controller
 {
@@ -104,4 +106,35 @@ class ProjectsController extends Controller
 
         return $project;
     }
+
+
+  
+
+public function downloadPDF(Request $request)
+{
+
+    $project = Projects::with("seasons")->get();
+
+
+return PDF::loadView('projects', compact('project'))->stream('projects.pdf');
+}
+
+public function sendPDF(Request $request)
+{
+    $project = Projects::with("seasons")->get();
+
+    $data["email"]= "isaiahjesusmartelmartin@alumno.ieselrincon.es";
+    $data["title"] = "From ItSolutionStuff.com";
+    $data["body"] = "This is Demo";
+    $pdf = PDF::loadView('projects', compact('project'))->stream('projects.pdf');
+
+        Mail::send('projects', compact('project'), function($message)use($data, $pdf) {
+            $message->to($data["email"], $data["email"])
+                    ->subject($data["title"])
+                    ->attachData($pdf, "text.pdf");
+        });
+ 
+            
+    
+}
 }

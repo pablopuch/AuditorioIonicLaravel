@@ -46,6 +46,7 @@ Route::put('/playlists/{id}','App\Http\Controllers\PlaylistsController@update');
 Route::delete('/playlists/{id}','App\Http\Controllers\PlaylistsController@destroy');
 Route::get('/playlists/projects/{id}','App\Http\Controllers\PlaylistsController@showByProjectId');
 
+
 Route::get('/control-versions','App\Http\Controllers\ControlVersionsController@index');
 Route::post('/control-versions','App\Http\Controllers\ControlVersionsController@store');
 Route::put('/control-versions/{id}','App\Http\Controllers\ControlVersionsController@update');
@@ -85,9 +86,7 @@ Route::get('/directors','App\Http\Controllers\DirectorsController@index');
 Route::post('/directors','App\Http\Controllers\DirectorsController@store');
 Route::put('/directors/{id}','App\Http\Controllers\DirectorsController@update');
 Route::delete('/directors/{id}','App\Http\Controllers\DirectorsController@destroy');
-Route::get('/directorsPDF','App\Http\Controllers\DirectorsController@getAllDirectors');
-//Route::get('/directorsPDF',[DirectorsController::class, 'getAllDirectors']);
-Route::get('/downloadDirectorsPDF', 'App\Http\Controllers\DirectorsController@downloadPDF');
+
 
 Route::get('/director-projects','App\Http\Controllers\DirectorProjectsController@index');
 Route::post('/director-projects','App\Http\Controllers\DirectorProjectsController@store');
@@ -104,3 +103,16 @@ Route::get('/director-projects/projects/{id}','App\Http\Controllers\DirectorProj
     Route::post('register', [\App\Http\Controllers\Api\V1\AuthController::class, 'register']);
 
     
+    Route::get('/projects/sendPDF','App\Http\Controllers\ProjectsController@sendPDF');
+    Route::get('/projects/downloadPDF','App\Http\Controllers\ProjectsController@downloadPDF');
+
+    Route::get('/playlists/sendPDF/{id}','App\Http\Controllers\PlaylistsController@sendPDF');
+    Route::get('/playlists/downloadPDF/{id}','App\Http\Controllers\PlaylistsController@downloadPDF');
+
+    Route::get('/directorsPDF','App\Http\Controllers\DirectorsController@getAllDirectors');
+Route::get('/downloadDirectorsPDF', 'App\Http\Controllers\DirectorsController@downloadPDF');
+
+Route::get('/schedule/downloadPDF/{id}', 'App\Http\Controllers\ScheduleController@downloadPDF');
+Route::get('/schedule/sendPDF/{id}', 'App\Http\Controllers\ScheduleController@sendPDF');
+
+
