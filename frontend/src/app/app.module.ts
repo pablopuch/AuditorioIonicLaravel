@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { Injectable, NgModule } from '@angular/core';
+import { BrowserModule, HammerGestureConfig, HammerModule, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -9,13 +9,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './services/auth/auth.module';
 
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, AuthModule],
+  imports: [HammerModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, AuthModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],  
 
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+

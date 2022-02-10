@@ -15,14 +15,13 @@ darkMode: boolean = true;
   }
   ngOnInit() {
   }
+  
 
   enableDarkMode(){
     document.body.classList.toggle('dark')
   }
 
-  downloadAndOpenPDF(){
-    Browser.open({ url: 'http://localhost:8000/api/downloadDirectorsPDF'});
-  }
+
 
 
 }

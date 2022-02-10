@@ -37,9 +37,17 @@
         <hr id="separation-title">
     </div>
 
+    <ion-button expand="full" #powerBtn>
+        Increase Power: {{ power }}
+        <ion-icon name="flame" slot="end"></ion-icon>
+    </ion-button>
+    <!-- <ion-button (press)="onPress($event)" (pressup)="onPressUp($event)"> Test </ion-button> -->
+    
 
+    <!-- <ion-button (press)="downloadAndOpenPdf()"></ion-button> -->
 
-
-
+    <ion-icon name="document" (click)="downloadAndOpenPdf()"></ion-icon>
+    <!-- <ion-icon name="mail" on-hold="sendPdfToEmail()"></ion-icon>
+   -->
 
 </ion-content>
