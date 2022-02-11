@@ -1,0 +1,21 @@
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        Multiple Selection
+      </ion-label>
+    </ion-list-header>
+  
+    <ion-item>
+    
+    <ion-item (click)="downloadAndOpenPdf()">
+      <ion-icon name="document" (click)="downloadAndOpenPdf()"></ion-icon>
+
+      <h2>Descargar PDF</h2>
+    </ion-item>
+    <ion-item lines="none" (click)="openDownloadPdfModal()">
+      <ion-icon name="mail" (click)="openSendPdfModal()"></ion-icon>
+      <h2>Enviar PDF al email</h2>
+    </ion-item>
+</ion-list>
+</ion-content>

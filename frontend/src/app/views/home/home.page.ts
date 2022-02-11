@@ -22,12 +22,10 @@ export class HomePage {
     private scheduleService: SchedulesService) { }
 
   ngOnInit(): void {
-    // this.loadInfo();
-  }
-
-  ionViewDidEnter() {
     this.loadInfo();
   }
+
+  
 
   loadInfo() {
     this.projectsService.getProjects().then(o => {

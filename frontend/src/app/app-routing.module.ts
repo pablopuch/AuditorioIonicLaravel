@@ -49,6 +49,24 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./views/register/register.module').then( m => m.RegisterPageModule)
   },
+  {
+    path: 'pdf-modal-menu',
+    loadChildren: () => import('./views/PDF-modal-menu/projects-pdf-menu/pdf-modal-menu.module').then( m => m.PDFModalMenuPageModule)
+  },
+  {
+    path: 'pdf-project-modal',
+    loadChildren: () => import('./views/pdf-project-modal/pdf-project-modal/pdf-project-modal.module').then( m => m.PdfProjectModalPageModule)
+  },  {
+    path: 'send-single-project-pdf',
+    loadChildren: () => import('./views/PdfModals/sendSingleProjectPdf/send-single-project-pdf/send-single-project-pdf.module').then( m => m.SendSingleProjectPdfPageModule)
+  },
+  {
+    path: 'download-single-project-pdf',
+    loadChildren: () => import('./views/PdfModals/downloadSingleProjectPdf/download-single-project-pdf/download-single-project-pdf.module').then( m => m.DownloadSingleProjectPdfPageModule)
+  },
+
+
+
 
 
 ];

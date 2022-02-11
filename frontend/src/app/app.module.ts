@@ -9,13 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './services/auth/auth.module';
 
-
+// import { IonRouterOutlet } from '@ionic/angular';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [HammerModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, AuthModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+  imports: [HammerModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, AuthModule,],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },  
+  
   ],  
 
   bootstrap: [AppComponent],

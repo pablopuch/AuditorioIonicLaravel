@@ -1,75 +1,92 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { LocalStorageService } from './services/local-storage/local-storage.service';
 import { ProjectsService } from './services/projects.service';
-import { GestureController } from '@ionic/angular';
+import { GestureController, MenuController } from '@ionic/angular';
 import { PdfService } from 'src/app/services/pdf/pdf.service';
 import { Browser } from '@capacitor/browser';
 import { IonRouterOutlet } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { HomePage } from './views/home/home.page';
+import { PDFModalMenuPage } from './views/PDF-modal-menu/projects-pdf-menu/pdf-modal-menu.page';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent implements AfterViewInit   {
-  @ViewChild('powerBtn', { read: ElementRef }) powerBtn: ElementRef;
-  power = 0;
+export class AppComponent implements AfterViewInit {
+  @ViewChild('holdBtn', { read: ElementRef }) holdBtn: ElementRef;
+  hold = 0;
   longPressActive = false;
+  menuController: MenuController;
 
-  constructor(private gestureCtrl: GestureController, private localStorageService:LocalStorageService, private pdfService: PdfService, public modalController: ModalController) { }
+  constructor(private router: Router, private gestureCtrl: GestureController, private localStorageService: LocalStorageService, private pdfService: PdfService, private modalController: ModalController) { }
 
-  async presentModal() {
-    const modal = await this.modalController.create({
-      component: HomePage,
-      cssClass: 'my-custom-class'
-    });
-    return await modal.present();
+  ngOnInit() {
+
   }
 
+
   ngAfterViewInit() {
+    console.log(this.holdBtn)
     const longPress = this.gestureCtrl.create({
-      el: this.powerBtn.nativeElement,
+      el: this.holdBtn.nativeElement,
       threshold: 0,
       gestureName: 'long-press',
       onStart: ev => {
         this.longPressActive = true;
         this.increase();
+
       },
       onEnd: ev => {
         this.longPressActive = false;
-        if (this.power >= 5) {
-          this.downloadAndOpenPdf();
-        }
+
       }
     }, true); // Passing true will run the gesture callback inside of NgZone!
 
     // Don't forget to enable!
     longPress.enable(true);
-    
+
   }
 
   increase(timeout = 200) {
     setTimeout(() => {
       if (this.longPressActive) {
-        this.power++;
-       
+        this.hold++;
+
         this.increase(timeout);
 
-        console.log(this.power)
-        
       }
     }, timeout);
-
+    if (this.hold == 4) {
+      this.openModal();
+      this.hold = 0;
+    }
   }
 
-  downloadAndOpenPdf() {
-    console.log("xd")
-     Browser.open({ url: 'http://localhost:8000/api/projects/downloadPDF' });
-  }
-  sendPdfToEmail() {
-    this.pdfService. sendProjectsPDF().subscribe();
+  // async openModal() {
+  //   console.log("ey")
+  //   const modal = await this.modalController.create({
+  //     component: PDFModalMenuPage,
+  //     cssClass: 'my-custom-class',
+  //     swipeToClose: true,
+  //     presentingElement: await this.modalController.getTop(),
+
+  //   });
+  //   return await modal.present();
+  // }
+
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: PDFModalMenuPage,
+      handle: false,
+      initialBreakpoint: 0.16,
+      breakpoints: [0, 0.16],
+
+    });
+    return await modal.present();
   }
 
 
