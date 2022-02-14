@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Projects;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\Auth;
 use Mail;
 
 class ProjectsController extends Controller
@@ -121,9 +122,11 @@ return PDF::loadView('projects', compact('project'))->stream('projects.pdf');
 
 public function sendPDF(Request $request)
 {
+    $user = Auth::user();
+
     $project = Projects::with("seasons")->get();
 
-    $data["email"]= "isaiahjesusmartelmartin@alumno.ieselrincon.es";
+    $data["email"]= $user->email;
     $data["title"] = "From ItSolutionStuff.com";
     $data["body"] = "This is Demo";
     $pdf = PDF::loadView('projects', compact('project'))->stream('projects.pdf');
@@ -134,7 +137,6 @@ public function sendPDF(Request $request)
                     ->attachData($pdf, "text.pdf");
         });
  
-            
-    
 }
+
 }

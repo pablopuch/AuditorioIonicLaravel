@@ -9,7 +9,8 @@ import { ModalController } from '@ionic/angular';
 import { HomePage } from './views/home/home.page';
 import { PDFModalMenuPage } from './views/PDF-modal-menu/projects-pdf-menu/pdf-modal-menu.page';
 import { Router } from '@angular/router';
-
+import { ThrowStmt } from '@angular/compiler';
+import { PdfModalOptionsService } from 'src/app/services/pdf-modal-options/pdf-modal-options.service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,9 @@ export class AppComponent implements AfterViewInit {
   longPressActive = false;
   menuController: MenuController;
 
-  constructor(private router: Router, private gestureCtrl: GestureController, private localStorageService: LocalStorageService, private pdfService: PdfService, private modalController: ModalController) { }
+  private modalOpen: boolean = false;
+
+  constructor(private pdfModalOptionsSerivce : PdfModalOptionsService, private router: Router, private gestureCtrl: GestureController, private localStorageService: LocalStorageService, private pdfService: PdfService, private modalController: ModalController) { }
 
   ngOnInit() {
 
@@ -62,6 +65,7 @@ export class AppComponent implements AfterViewInit {
     }, timeout);
     if (this.hold == 4) {
       this.openModal();
+    this.pdfModalOptionsSerivce.category = 0;
       this.hold = 0;
     }
   }
@@ -79,14 +83,29 @@ export class AppComponent implements AfterViewInit {
   // }
 
   async openModal() {
+
+   
     const modal = await this.modalController.create({
       component: PDFModalMenuPage,
       handle: false,
       initialBreakpoint: 0.16,
       breakpoints: [0, 0.16],
-
     });
-    return await modal.present();
+    
+     modal.onDidDismiss().then((o) => { this.modalOpen=false })
+
+    if (!this.modalOpen) {
+      this.modalOpen = true;
+
+
+
+      return await modal.present();
+      
+
+    } 
+    
+
+  //  await modal.onWillDismiss().then((o) => { console.log(o) })
   }
 
 

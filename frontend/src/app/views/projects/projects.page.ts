@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { Router } from '@angular/router';
 import { Projects } from '../../models/projects';
 import { ProjectsService } from '../../services/projects.service';
@@ -14,11 +14,11 @@ import { PdfProjectModalPage } from '../pdf-project-modal/pdf-project-modal/pdf-
   styleUrls: ['./projects.page.scss'],
 })
 export class ProjectsPage implements AfterViewInit {
-  @ViewChild('holdBtn', { read: ElementRef }) holdBtn: ElementRef;
+  @ViewChildren('holdBtn', { read: ElementRef }) holdBtnArray: QueryList<ElementRef>;
   hold = 0;
   longPressActive = false;
   menuController: MenuController;
- 
+
 
   public projectsArray: Array<Projects> = [];
   public projects: Projects;
@@ -28,32 +28,39 @@ export class ProjectsPage implements AfterViewInit {
 
 
 
-  constructor( private router: Router, private projectsService: ProjectsService, private pdfService: PdfService, private gestureCtrl: GestureController, private modalController: ModalController) { }
+  constructor(private router: Router, private projectsService: ProjectsService, private pdfService: PdfService, private gestureCtrl: GestureController, private modalController: ModalController) { }
 
   ngOnInit(): void {
-    this.loadInfo();
-    
+
+
   }
 
-  ngAfterViewInit() {
-    console.log(this.holdBtn)
-    const longPress = this.gestureCtrl.create({
-      el: this.holdBtn.nativeElement,
-      threshold: 0,
-      gestureName: 'long-press',
-      onStart: ev => {
-        this.longPressActive = true;
-        this.increase();
-
-      },
-      onEnd: ev => {
-        this.longPressActive = false;
-
-      }
-    }, true); // Passing true will run the gesture callback inside of NgZone!
-
-    // Don't forget to enable!
-    longPress.enable(true);
+  async ngAfterViewInit() {
+    await this.loadInfo();
+    this.holdBtnArray.changes
+        .subscribe(() =>  this.holdBtnArray.forEach((holdBtn: ElementRef) => {
+          if (holdBtn != null) {
+            const longPress = this.gestureCtrl.create({
+              el: holdBtn.nativeElement,
+              threshold: 0,
+              gestureName: 'long-press',
+              onStart: ev => {
+                this.longPressActive = true;
+                this.increase();
+    
+              },
+              onEnd: ev => {
+                this.longPressActive = false;
+    
+              }
+            }, true); // Passing true will run the gesture callback inside of NgZone!
+    
+            // Don't forget to enable!
+            longPress.enable(true);
+          }
+        })
+    );
+  
 
   }
 
@@ -72,14 +79,14 @@ export class ProjectsPage implements AfterViewInit {
     }
   }
 
- 
+
 
   async openModal() {
     const modal = await this.modalController.create({
       component: PdfProjectModalPage,
       handle: false,
-  
-
+      initialBreakpoint: 0.22,
+      breakpoints: [0, 0.22],
     });
     return await modal.present();
   }
@@ -87,25 +94,25 @@ export class ProjectsPage implements AfterViewInit {
 
 
   loadInfo() {
-    
+
     this.projectsService.getProjects().then(o => {
       o.subscribe((p: Array<Projects>) => {
         this.projectsArray = p.filter((project) => {
+
+
           return project.published == true;
         })
-        // for (let project of p) {
-        //   if (project.published == true) {
-        //     this.projectsArray.push(project);
-        //   }
-        // }
+  
+
+   
       })
     })
 
   }
 
 
-}
 
+}
 
 
 
