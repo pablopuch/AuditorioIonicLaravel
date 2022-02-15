@@ -18,18 +18,15 @@
         </ion-label>
         <ion-input id="project-id" type="text" formControlName="name" required></ion-input>
       </ion-item>
-      <span class="error ion-padding" *ngIf="submitted && errorCtr.email.errors?.required">
-        Email is required.
-      </span>
-      <span class="error ion-padding" *ngIf="submitted && errorCtr.email.errors?.pattern">
-        Enter valid email.
-      </span>
+   
 
       <ion-item>
         <ion-label position="floating" for="project_id">
           Email
         </ion-label>
         <ion-input name="email" type="email" formControlName="email" required></ion-input>
+        <span slot="error" *ngIf="registerForm.controls['email'].errors?.required && registerForm.controls['email'].touched">Rellene el email</span>
+        <span slot="error" *ngIf="registerForm.controls['email'].errors?.pattern">El email no es válido.</span>
       </ion-item>
 
       <ion-item>
@@ -37,7 +34,9 @@
           Contraseña
         </ion-label>
         <ion-input name="password" type="password" formControlName="password" required></ion-input>
-
+        <span slot="error" *ngIf="registerForm.controls['password'].errors?.required && registerForm.controls['password'].touched">Rellene la contraseña</span>
+        <span slot="error" *ngIf="registerForm.controls['password'].errors?.minLength && registerForm.controls['password'].touched" >La contraseña debe de tener más de 6 caracteres.</span>
+        <span slot="error" *ngIf="registerForm.controls['password'].errors?.maxlength" >La contraseña no puede tener más de 12 caracteres.</span>
       </ion-item>
 
       <ion-item>

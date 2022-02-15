@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { PdfService } from 'src/app/services/pdf/pdf.service';
 import { Browser } from '@capacitor/browser';
-import { PdfModalOptionsService } from 'src/app/services/pdf-modal-options/pdf-modal-options.service';
 
 @Component({
   selector: 'app-pdf-modal-menu',
@@ -12,15 +11,15 @@ import { PdfModalOptionsService } from 'src/app/services/pdf-modal-options/pdf-m
 export class PDFModalMenuPage implements OnInit {
 
 
-  constructor(private modalController: ModalController, private pdfService: PdfService, private pdfModalOptionsSerivce : PdfModalOptionsService) { }
+  constructor(private modalController: ModalController, private pdfService: PdfService,) { }
 
   ngOnInit() {
   
   }
 
   downloadOrSend(option){
-    this.pdfModalOptionsSerivce.downloadOrSend = option;
-    this.pdfModalOptionsSerivce.getOptions();
+    this.pdfService.downloadOrSend = option;
+    this.pdfService.getOptions();
   }
 
   // setCategoryModal(option) {

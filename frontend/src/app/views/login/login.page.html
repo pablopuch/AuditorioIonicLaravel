@@ -22,7 +22,12 @@
                         <ion-icon class="musical-note-icon" src="assets/musical-note.svg"></ion-icon>
                         <ion-input name="email" type="email" placeholder="your@email.com" formControlName="email"
                             required></ion-input>
+                      
+
                     </ion-row>
+                    <span slot="error" *ngIf="loginForm.controls['email'].errors?.required && loginForm.controls['email']?.touched">Rellene el email</span>
+                    <span slot="error" *ngIf="loginForm.controls['email'].errors?.pattern">El email no es válido.</span>
+                
                 </ion-item>
                 <ion-item id="password-fields">
                     <ion-label class="label" position="floating" for="project_id">Contraseña</ion-label>
@@ -30,7 +35,10 @@
                         <ion-icon class="musical-note-icon" src="assets/musical-note.svg"></ion-icon>
                         <ion-input name="password" type="password" placeholder="Password" formControlName="password"
                             required></ion-input>
+                            
                     </ion-row>
+                    <span slot="error" *ngIf="loginForm.controls['password'].errors?.required && loginForm.controls['password']?.touched">Rellene la contraseña</span>
+       
                 </ion-item>
 
 

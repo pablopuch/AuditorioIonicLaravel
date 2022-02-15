@@ -5,7 +5,7 @@ import { DownloadSingleProjectPdfPage } from '../../PdfModals/downloadSingleProj
 import { PDFModalMenuPage } from '../../PDF-modal-menu/projects-pdf-menu/pdf-modal-menu.page';
 import { PdfService } from 'src/app/services/pdf/pdf.service';
 import { Browser } from '@capacitor/browser';
-import { PdfModalOptionsService } from 'src/app/services/pdf-modal-options/pdf-modal-options.service';
+
 
 @Component({
   selector: 'app-pdf-project-modal',
@@ -14,7 +14,7 @@ import { PdfModalOptionsService } from 'src/app/services/pdf-modal-options/pdf-m
 })
 export class PdfProjectModalPage implements OnInit {
 
-  constructor(private modalController: ModalController, private pdfModalOptionsSerivce: PdfModalOptionsService) { }
+  constructor(private modalController: ModalController, private pdfService: PdfService) { }
 
   private modalOpen: boolean = false;
   ngOnInit() {
@@ -72,5 +72,8 @@ export class PdfProjectModalPage implements OnInit {
 
   }
 
+  category(category){
+  this.pdfService.category = category;
+  }
 
 }
