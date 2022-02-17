@@ -68,12 +68,11 @@ export class PdfService {
     switch (this.category) {
 
       case 0:
-        console.log(this.category)
+       
         this.getProjectsPDF();
 
         break;
       case 1:
-        console.log("opcion 2 download");
         break;
     }
   }
@@ -82,14 +81,15 @@ export class PdfService {
     console.log("email")
     console.log(this.category)
     switch (this.category) {
-      case 1:
+      case 0:
+        
         this.sendProjectsPDF().then(o => {
           o.subscribe()
 
 
         });
         break;
-      case 2:
+      case 1:
         console.log("opcion 2 email");
         break;
     }
@@ -100,7 +100,6 @@ export class PdfService {
 
 
   async sendProjectsPDF() {
-    await console.log(this.httpClient.get(this.sendProjects))
     await this.getHttpOptions();
     return await this.httpClient.get(this.sendProjects, this.httpOptions);
   }
