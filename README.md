@@ -140,7 +140,7 @@ Now the app is running!!
 
 ## Collaboration
 ***
-My class-mate in this project Pablo Punch, we helped a lot each other: https://github.com/pablopuch/ (here is his project: https://github.com/pablopuch/OFGC).
+My class-mate in this project Pablo Puch, we helped a lot each other: https://github.com/pablopuch/ (here is his project: https://github.com/pablopuch/OFGC).
 
 
 Our teacher Tiburcio over-helped everyone through the project: https://github.com/tcrurav, and his example of Ionic-Spring was very useful for my first CRUD (https://github.com/tcrurav/spring_ionic_21_22).
